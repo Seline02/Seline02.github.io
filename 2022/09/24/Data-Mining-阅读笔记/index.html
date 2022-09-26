@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Data Mining 阅读笔记 | Seline's blog</title><meta name="author" content="Seline"><meta name="copyright" content="Seline"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第二章 数据预处理 2.1 简介 收集到的数据很可能是非结构化的，需要从其中提取特征，因此需要数据预处理。 数据预处理的几个步骤：  特征提取和可移植性  数据有多个来源，需要集成到单个数据库；有些算法只能使用特定的数据类型，而数据可能包含不同类型的数据，因此需要数据类型的可移植性   数据清洗  删除&#x2F;插补条目   数据消减、选择和转换  数据量减少：通过采样&#x2F;降维 特征选择：和具体问题高度相关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Mining 阅读笔记">
+<meta property="og:url" content="https://seline02.github.io/2022/09/24/Data-Mining-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Seline&#39;s blog">
+<meta property="og:description" content="第二章 数据预处理 2.1 简介 收集到的数据很可能是非结构化的，需要从其中提取特征，因此需要数据预处理。 数据预处理的几个步骤：  特征提取和可移植性  数据有多个来源，需要集成到单个数据库；有些算法只能使用特定的数据类型，而数据可能包含不同类型的数据，因此需要数据类型的可移植性   数据清洗  删除&#x2F;插补条目   数据消减、选择和转换  数据量减少：通过采样&#x2F;降维 特征选择：和具体问题高度相关">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-09-24T11:35:08.000Z">
+<meta property="article:modified_time" content="2022-09-24T12:59:08.012Z">
+<meta property="article:author" content="Seline">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://seline02.github.io/2022/09/24/Data-Mining-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Data Mining 阅读笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-24 20:59:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Data Mining 阅读笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-24T11:35:08.000Z" title="发表于 2022-09-24 19:35:08">2022-09-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-24T12:59:08.012Z" title="更新于 2022-09-24 20:59:08">2022-09-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Data Mining 阅读笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第二章-数据预处理">第二章 数据预处理</h1>
+<h2 id="2-1-简介">2.1 简介</h2>
+<p>收集到的数据很可能是非结构化的，需要从其中提取特征，因此需要数据预处理。</p>
+<p>数据预处理的几个步骤：</p>
+<ul>
+<li>特征提取和可移植性
+<ul>
+<li>数据有多个来源，需要集成到单个数据库；有些算法只能使用特定的数据类型，而数据可能包含不同类型的数据，因此需要数据类型的可移植性</li>
+</ul>
+</li>
+<li>数据清洗
+<ul>
+<li>删除/插补条目</li>
+</ul>
+</li>
+<li>数据消减、选择和转换
+<ul>
+<li>数据量减少：通过采样/降维</li>
+<li>特征选择：和具体问题高度相关</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-特征提取和可移植性">2.2 特征提取和可移植性</h2>
+<p>收集到的数据是原始、非结构化的（raw, unstructed)，需要转换成统一的形式</p>
+<h3 id="2-2-1-特征提取">2.2.1 特征提取</h3>
+<p>在某些情况下，特征提取与数据类型可移植性的概念密切相关，其中一种类型的低级特征可能转换为另一种类型的高级特征。特征提取的性质取决于数据应用的领域：</p>
+<ul>
+<li>**传感器数据：**传感器数据通常以大量的低电平信号（low-level signals）收集。有时使用小波变换或傅里叶变换将低电平信号转换为更高级的特征。</li>
+<li><strong>图像数据：</strong>
+<ul>
+<li>原始形式：图像数据被表示为像素</li>
+<li>稍高级别：可以使用颜色直方图来表示图像不同部分的特征（直方图只能描述颜色的分布，不能描述数据几何上的信息）</li>
+<li>视觉词袋：类比NLP中的词袋模型。用来表示图像的含义。</li>
+<li>图像处理中的一个挑战是数据量大</li>
+</ul>
+</li>
+<li><strong>Web日志</strong>：Web日志通常以预先指定的格式表示为文本字符串。由于这些日志中的字段被明确指定和分隔，因此将Web访问日志转换为分类和数字属性的多维表示相对比较容易。</li>
+<li><strong>网络流量</strong>：网络数据包的特征用于分析入侵等。可以从这些数据包中提取各种特征，例如传输的字节数、使用的网络协议等。</li>
+<li><strong>文档数据</strong>：文档数据通常是原始和非结构化的。一种方法是删除停用词，词干提取（stemming），并使用词袋模型表示。也可以使用实体抽取。</li>
+</ul>
+<p>命名实体识别是信息提取的重要子任务。可以用来理解句子和复杂事件的结构。也可以用于填充更传统的关系元素数据库或者更容易分析的原子实体序列。</p>
+<h3 id="2-2-2-数据类型可移植性">2.2.2 数据类型可移植性</h3>
+<p>数据类型的混合也限制了分析人员使用现成的工具进行处理的能力。在某些情况下移植数据类型确实会丢失表达能力和准确性。理想情况下，最好根据特定的数据类型组合来定制算法以优化结果，但这是耗时的。</p>
+<p>数字数据类型是数据挖掘算法中最简单和研究最广泛的数据类型，所以研究如何将不同数据类型转换为数字数据类型尤其有用。</p>
+<h4 id="2-2-2-1-数字到分类数据：离散化">2.2.2.1 数字到分类数据：离散化</h4>
+<p>离散化过程将数字属性的范围划分为φ个范围。然后，根据原始属性所在的范围，假定该属性包含从1到φ的φ个不同分类标注值。例如，考虑年龄属性。人们可以创建范围[0,10]，[11,20]，[21,30]等等。范围[11,20]中任何记录的符号值为“2”，范围[21,30]中记录的符号值为“3”。由于这些是符号值，因此在值“2”和“3”之间不会进行排序。此外，一个范围内的变化在离散化之后是不可区分的。因此，离散化过程的确会失去一些挖掘过程的信息。</p>
+<p>离散化的一个挑战是数据可能在不同的时间间隔内不均匀分布。例如工资，使用相同大小的范围可能对区分不同数据段不是很有帮助。</p>
+<p>离散化过程可以根据应用特定目标以各种方式执行：</p>
+<p>放回/不放回</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://seline02.github.io">Seline</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://seline02.github.io/2022/09/24/Data-Mining-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">https://seline02.github.io/2022/09/24/Data-Mining-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://seline02.github.io" target="_blank">Seline's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/09/26/Back-Propagation/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Back Propagation</div></div></a></div><div class="next-post pull-right"><a href="/2022/09/24/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">控制理论部分网课笔记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">第二章 数据预处理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">2.1 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E5%92%8C%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%80%A7"><span class="toc-number">1.2.</span> <span class="toc-text">2.2 特征提取和可移植性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.2.1 特征提取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%AF%E7%A7%BB%E6%A4%8D%E6%80%A7"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2.2 数据类型可移植性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-1-%E6%95%B0%E5%AD%97%E5%88%B0%E5%88%86%E7%B1%BB%E6%95%B0%E6%8D%AE%EF%BC%9A%E7%A6%BB%E6%95%A3%E5%8C%96"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.2.2.1 数字到分类数据：离散化</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/26/Back-Propagation/" title="Back Propagation"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Back Propagation"/></a><div class="content"><a class="title" href="/2022/09/26/Back-Propagation/" title="Back Propagation">Back Propagation</a><time datetime="2022-09-26T10:43:54.000Z" title="发表于 2022-09-26 18:43:54">2022-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/Data-Mining-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="Data Mining 阅读笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Data Mining 阅读笔记"/></a><div class="content"><a class="title" href="/2022/09/24/Data-Mining-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="Data Mining 阅读笔记">Data Mining 阅读笔记</a><time datetime="2022-09-24T11:35:08.000Z" title="发表于 2022-09-24 19:35:08">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/" title="控制理论部分网课笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="控制理论部分网课笔记"/></a><div class="content"><a class="title" href="/2022/09/24/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/" title="控制理论部分网课笔记">控制理论部分网课笔记</a><time datetime="2022-09-24T04:40:06.000Z" title="发表于 2022-09-24 12:40:06">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/%E4%BF%A1%E5%8F%B7%E6%B5%81%E5%9B%BE-%E6%A2%85%E6%A3%AE%E5%85%AC%E5%BC%8F/" title="信号流图-梅森公式"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="信号流图-梅森公式"/></a><div class="content"><a class="title" href="/2022/09/24/%E4%BF%A1%E5%8F%B7%E6%B5%81%E5%9B%BE-%E6%A2%85%E6%A3%AE%E5%85%AC%E5%BC%8F/" title="信号流图-梅森公式">信号流图-梅森公式</a><time datetime="2022-09-24T03:10:25.000Z" title="发表于 2022-09-24 11:10:25">2022-09-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/24/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0/" title="传递函数"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="传递函数"/></a><div class="content"><a class="title" href="/2022/09/24/%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0/" title="传递函数">传递函数</a><time datetime="2022-09-24T02:22:25.000Z" title="发表于 2022-09-24 10:22:25">2022-09-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
