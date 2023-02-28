@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>分布式笔记 | Seline's blog</title><meta name="author" content="Seline"><meta name="copyright" content="Seline"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="BSP模型：https:&#x2F;&#x2F;blog.csdn.net&#x2F;sydpz1987&#x2F;article&#x2F;details&#x2F;51517851">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>分布式笔记 | Seline's blog</title><meta name="author" content="Seline"><meta name="copyright" content="Seline"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="BSP模型：https:&#x2F;&#x2F;blog.csdn.net&#x2F;sydpz1987&#x2F;article&#x2F;details&#x2F;51517851 均匀洗牌：左移一位 蝶式：最高位最低位互换 P41 并非所有网络之间可实现完美嵌入，例如一棵完全二叉树，除非其高度为2，否则无法将其完美嵌入到20D网孔中 P43 CPU板级上的总线称为本地总线…  交叉开关 ​		级间连接方式ISC：均匀洗牌，蝶式，纵横交叉 https:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分布式笔记">
 <meta property="og:url" content="https://seline02.github.io/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Seline&#39;s blog">
-<meta property="og:description" content="BSP模型：https:&#x2F;&#x2F;blog.csdn.net&#x2F;sydpz1987&#x2F;article&#x2F;details&#x2F;51517851">
+<meta property="og:description" content="BSP模型：https:&#x2F;&#x2F;blog.csdn.net&#x2F;sydpz1987&#x2F;article&#x2F;details&#x2F;51517851 均匀洗牌：左移一位 蝶式：最高位最低位互换 P41 并非所有网络之间可实现完美嵌入，例如一棵完全二叉树，除非其高度为2，否则无法将其完美嵌入到20D网孔中 P43 CPU板级上的总线称为本地总线…  交叉开关 ​		级间连接方式ISC：均匀洗牌，蝶式，纵横交叉 https:">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
 <meta property="article:published_time" content="2022-11-08T06:01:22.000Z">
-<meta property="article:modified_time" content="2022-11-08T06:01:49.635Z">
+<meta property="article:modified_time" content="2023-02-17T11:59:16.052Z">
 <meta property="article:author" content="Seline">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://seline02.github.io/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
@@ -52,7 +52,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2022-11-08 14:01:49'
+  postUpdate: '2023-02-17 19:59:16'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -141,8 +141,261 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">分布式笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-08T06:01:22.000Z" title="发表于 2022-11-08 14:01:22">2022-11-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-08T06:01:49.635Z" title="更新于 2022-11-08 14:01:49">2022-11-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="分布式笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>BSP模型：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sydpz1987/article/details/51517851">https://blog.csdn.net/sydpz1987/article/details/51517851</a></p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://seline02.github.io">Seline</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://seline02.github.io/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/">https://seline02.github.io/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://seline02.github.io" target="_blank">Seline's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">西瓜书-强化学习</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/15/Acoustic-Feature/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Acoustic Feature</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" title="西瓜书-强化学习"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="西瓜书-强化学习"/></a><div class="content"><a class="title" href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" title="西瓜书-强化学习">西瓜书-强化学习</a><time datetime="2022-11-17T15:58:45.000Z" title="发表于 2022-11-17 23:58:45">2022-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/" title="分布式笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="分布式笔记"/></a><div class="content"><a class="title" href="/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/" title="分布式笔记">分布式笔记</a><time datetime="2022-11-08T06:01:22.000Z" title="发表于 2022-11-08 14:01:22">2022-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/15/Acoustic-Feature/" title="Acoustic Feature"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Acoustic Feature"/></a><div class="content"><a class="title" href="/2022/10/15/Acoustic-Feature/" title="Acoustic Feature">Acoustic Feature</a><time datetime="2022-10-15T15:45:04.000Z" title="发表于 2022-10-15 23:45:04">2022-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/10/%E6%98%93%E6%96%B9%E8%BE%BE%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/" title="易方达项目笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="易方达项目笔记"/></a><div class="content"><a class="title" href="/2022/10/10/%E6%98%93%E6%96%B9%E8%BE%BE%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/" title="易方达项目笔记">易方达项目笔记</a><time datetime="2022-10-10T10:10:13.000Z" title="发表于 2022-10-10 18:10:13">2022-10-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/05/PyTorch%E7%AC%94%E8%AE%B0%EF%BC%88%E6%9D%82%EF%BC%89/" title="PyTorch笔记（杂）"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyTorch笔记（杂）"/></a><div class="content"><a class="title" href="/2022/10/05/PyTorch%E7%AC%94%E8%AE%B0%EF%BC%88%E6%9D%82%EF%BC%89/" title="PyTorch笔记（杂）">PyTorch笔记（杂）</a><time datetime="2022-10-05T08:44:29.000Z" title="发表于 2022-10-05 16:44:29">2022-10-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">分布式笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-08T06:01:22.000Z" title="发表于 2022-11-08 14:01:22">2022-11-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-17T11:59:16.052Z" title="更新于 2023-02-17 19:59:16">2023-02-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="分布式笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>BSP模型：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sydpz1987/article/details/51517851">https://blog.csdn.net/sydpz1987/article/details/51517851</a></p>
+<p>均匀洗牌：左移一位</p>
+<p>蝶式：最高位最低位互换</p>
+<p>P41 并非所有网络之间可实现完美嵌入，例如一棵完全二叉树，除非其高度为2，否则无法将其完美嵌入到20D网孔中</p>
+<p>P43 CPU板级上的总线称为本地总线…  交叉开关</p>
+<p>​		级间连接方式ISC：均匀洗牌，蝶式，纵横交叉</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43934607/article/details/111680075">https://blog.csdn.net/weixin_43934607/article/details/111680075</a></p>
+<img src="image-20230126175333006.png" alt="image-20230126175333006" style="zoom:50%;">
+<p><img src="image-20230126174949868.png" alt="image-20230126174949868"></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/347217293">https://zhuanlan.zhihu.com/p/347217293</a></p>
+<p>而无论是哪一种结构，都可能会出现数据共享的问题，即两个<strong>不同处理机的 Cache</strong> 存放了缓存了<strong>同一个主存单元</strong>的块，即<strong>共享数据</strong>，这种情况就可能会导致 <strong>Cache</strong> 一致性问题的出现。</p>
+<img src="image-20230128180928222.png" alt="image-20230128180928222" style="zoom:50%;">
+<p>2o</p>
+<p>=============</p>
+<p>动态互连网络权衡、比较性能：表格+</p>
+<p>总线<strong>造价最低，单易冲突</strong>；交叉开关<strong>造价最高，但带宽和选路性能最好</strong>；多级互连网络是总线与交叉开关的折中，主要优点<strong>采用模块结构，可扩展性好，但延迟随网络尺寸对数增长</strong></p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/CSMA%2FCD/986847">https://baike.baidu.com/item/CSMA%2FCD/986847</a></p>
+<p>CSMA/CD（Carrier Sense Multiple Access with Collision Detection，载波侦听多路访问/冲突检测协议），早期主要是以太网络中数据传输方式，广泛应用于以太网中。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%BD%E6%B3%A2%E4%BE%A6%E5%90%AC/4925902?fromModule=lemma_inlink">载波侦听</a>（Carrier Sense），意思是网络上各个工作站在发送数据前，都要确认总线上有没有数据传输。若有数据传输（称总线为忙），则不发送数据；若无数据传输（称<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%80%BB%E7%BA%BF/108823?fromModule=lemma_inlink">总线</a>为空），立即发送准备好的数据。</p>
+<p>多路访问（Multiple Access），意思是网络上所有工作站收发数据，共同使用同一条总线，且发送数据是广播式。</p>
+<p>“冲突检测”是指发送结点在发出信息帧的同时，还必须监听媒体，判断是否发生冲突（同一时刻，有无其他结点也在发送信息帧）。</p>
+<p>并行计算机结构模型：</p>
+<p>1、并行向量计算机（PVP)</p>
+<img src="image-20230126201643566.png" alt="image-20230126201643566" style="zoom:50%;">
+<ul>
+<li>使用专门设计的<strong>高带宽的交叉开关网络</strong>将VP连向共享存储模块，存储器可以每秒兆字节的速度向处理器提供数据。这样的机器通常<strong>不使用高速缓存</strong>，而是使用大量的<strong>向量寄存器</strong>和<strong>指令缓冲器</strong>。</li>
+</ul>
+<p>2、对称多处理器（SMP）</p>
+<img src="image-20230126203034457.png" alt="image-20230126203034457" style="zoom:50%;">
+<ul>
+<li>SMP用微处理器（有片上或外置高速缓存），它们经由高速总线/交叉开关连向共享存储器。主要用于<strong>商务领域</strong>，如数据库、在线事务处理系统和数据仓库等。</li>
+<li>系统<strong>对称</strong>，每个处理器可等同地访问共享存储器、I/O设备和操作系统服务。因为对称，所以能有<strong>较高并行度</strong></li>
+<li>由于<strong>共享存储，限制了系统中处理器不能太多</strong>，同时总线和交叉开关互连一旦做成也难于扩展。（<strong>不可扩放性</strong>）</li>
+</ul>
+<p>3、大规模并行处理机（MPP）</p>
+<img src="image-20230126204631922.png" alt="image-20230126204631922" style="zoom:50%;">
+<ul>
+<li>特性：</li>
+<li>① 处理节点用商品化的微处理器</li>
+<li>② 系统中有物理上的分布式存储器</li>
+<li>③ 采用高通信带宽和低延迟的<strong>互连网络</strong>（专门设计和定制的）</li>
+<li>④ 能<strong>扩放</strong>至成百上千乃至上万个处理器</li>
+<li>⑤ <strong>异步</strong>的MIMD机器，程序由多个进程组成，每个都有私有地址空间，进程间用<strong>传递消息机制</strong>相互作用</li>
+<li>主要应用于科学计算、工程模拟和信号处理等以计算为主的领域</li>
+</ul>
+<p>4、分布共享存储处理机（DSM）</p>
+<img src="image-20230126211106206.png" alt="image-20230126211106206" style="zoom:50%;">
+<ul>
+<li><u>高速缓存目录（DIR）用以支持<strong>分布高速缓存的一致性</strong></u></li>
+<li>DSM和SMP的主要差别是，DSM在物理上有<strong>分布在节点中的局存</strong>，从而形成了一个共享的存储器</li>
+<li>对用户而言，系统硬件和软件提供了一个<strong>单地址的编程空间</strong>。<strong>DSP相对于MPP</strong>的优越性是<strong>编程较容易</strong></li>
+</ul>
+<p>5、工作站机群（COW）</p>
+<img src="image-20230126212954209.png" alt="image-20230126212954209" style="zoom:50%;">
+<ul>
+<li>特征：</li>
+<li>① COW的每个节点都是一个完整的工作站（不包括监视器、键盘、鼠标等），这样的节点有时称为“无头工作站”，一个节点也可以是一台PC或SMP</li>
+<li>② 各节点通过一种低成本的商品网络（如以太网、FDDI和ATM开关等）互连</li>
+<li>③ 各节点内总是有<strong>本地磁盘</strong>，而MPP节点内却没有</li>
+<li>④ 节点内网络接口是<strong>松散耦合</strong>到<strong>I/O总线</strong>上，而MPP内的网络接口是连到处理节点的<strong>存储总线</strong>上，是<strong>紧耦合</strong>的</li>
+<li>⑤ 每个节点中驻留一个完整的操作系统，而MPP通常只是一个微核。COW的操作系统是工作站UNIX，加上一个附加的软件层，以支持单一系统映像、并行度、通信和负载平衡</li>
+</ul>
+<p>COW VS MPP：3、4、5点+P79通信要求</p>
+<p>PVP不使用高速缓存</p>
+<p>SMP 有高速缓存    优点：对称-较高并行度    缺点：不可扩放性</p>
+<p>COMA</p>
+<p>优点：在本地共享存储器命中的概率较高</p>
+<p>缺点：当处理器的访问不在本节点命中时，由于<strong>存储器的地址是活动的</strong>，需要一种机制来查找被访问单元的当前位置，因此延迟很大</p>
+<p>NCC-NUMA</p>
+<p>虽然每个处理器都有高速缓存，但硬件不负责维护高速缓存一致性。高速缓存一致性由编译器或程序员来维护。好处是系统可扩性强。</p>
+<p><strong>MPP设计问题</strong></p>
+<ul>
+<li>可扩放性
+<ul>
+<li>系统能扩展至成千上万个处理器，而<strong>存储器和I/O的容量</strong>亦能按比例地增加</li>
+<li>要<strong>平衡</strong>处理能力与存储和I/O的能力</li>
+<li>要<strong>平衡</strong>计算能力与交互能力</li>
+</ul>
+</li>
+<li>系统成本
+<ul>
+<li>要保证低成本，用<strong>商用CMOS微处理器</strong></li>
+<li>要采用<strong>相对稳定的结构</strong>，如可扩放并行机的Shell结构</li>
+<li>要使用物理上<strong>分布</strong>的存储器结构，它比同规模机器的集中存储器结构要便宜</li>
+<li>要采用<strong>SMP</strong>节点方式以削减互连规模</li>
+</ul>
+</li>
+<li>通用性和可用性
+<ul>
+<li>必须是一个通用系统，能支持<strong>不同的应用</strong>（技术和商业）</li>
+<li>要支持流行的<strong>标准编程模式</strong>（如<strong>PVM、MPI</strong>）</li>
+<li>诸节点应能按大、小作业要求进行不同的组合以支持<strong>交互和批处理</strong>模式</li>
+<li><strong>互连拓扑应对用户透明</strong>（（（</li>
+<li>应在不同层次上支持<strong>单一系统映像</strong>（（（</li>
+<li>必须使用高可用性技术（<strong>故障</strong>）</li>
+</ul>
+</li>
+<li>通信要求
+<ul>
+<li>MPP和COW的关键差别是节点间的通信，<strong>COW使用标准的LAN</strong>，而MPP使用高速、专用<strong>高带宽、低延迟的互连网络</strong>，无疑在通信方面优于COW。然而通信技术的迅速发展，COW对MPP颇具威胁，从而MPP对通信技术也提出了更高的要求</li>
+</ul>
+</li>
+<li>存储器和I/O能力
+<ul>
+<li>因为MPP是可扩放系统，所以要求非常大的总计存储器和I/O设备容量，I/O方面较落后，需要提供一个<strong>可扩放的I/O子系统</strong></li>
+</ul>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.docin.com/p-441896381.html">https://www.docin.com/p-441896381.html</a></p>
+<p>热备份：系统处于正常运转状态下的备份</p>
+<p>冷备份：离线备份</p>
+<p><strong>保证高速缓存的一致性</strong></p>
+<ul>
+<li><strong>监听总线协议</strong>：基于总线连接的多处理机系统
+<ul>
+<li>写无效：本地高速缓存的数据块更新时使所有远程副本均无效</li>
+<li>写更新：把更新的数据块广播给含该数据块的所有高速缓存</li>
+</ul>
+</li>
+<li><strong>基于目录的协议</strong>：多级互连网络连接的多处理机系统
+<ul>
+<li>使用一个目录来记录共享数据的所有高速缓存行的位置和状态</li>
+</ul>
+</li>
+</ul>
+<p><strong>超线性加速</strong></p>
+<ul>
+<li>并行搜索算法：允许不同的处理器在不同的分支方向上同时搜索，当某一处理器一旦迅速地找到了解，它就向其余的处理器发出中止搜索的信号，这就会提前取消那些在串行算法中所作的无谓的搜索分支</li>
+<li>绝大多数并行机中，每个处理器均有少量的高速缓存，当某一问题执行在大量的处理器上，而其<strong>大多的数据均放在高速缓存中</strong>，总的计算时间趋于减少，如果由于这种<strong>高速缓存效应</strong>所造成的计算时间下降<strong>补偿</strong>了由于<strong>通信</strong>等所造成的<strong>额外开销时间</strong>，则可能造成超线性加速现象</li>
+</ul>
+<p>可扩放性定义与传统加速比定义的差别</p>
+<ul>
+<li>加速比的定义是保持问题规模不变，而可扩放性定义是保持平均速度不变</li>
+<li>加速比是标志并行处理相对于串行处理所获得性能增加；可扩放性是标志从小规模系统到大规模系统所引起的性能衰减</li>
+</ul>
+<p>并行算法的一般设计过程</p>
+<p>PCAM</p>
+<ul>
+<li>划分：分解成小的任务，开拓<strong>并发性</strong></li>
+<li>通讯：确定诸任务间的数据交换，监测划分的合理性</li>
+<li>组合：依据任务的局部性，组合成更大的任务</li>
+<li>映射：将每个任务分配到处理器上，提高算法的性能</li>
+</ul>
+<p>划分</p>
+<ul>
+<li>域分解</li>
+<li>功能分解</li>
+</ul>
+<p><strong>划分判据</strong></p>
+<ul>
+<li>划分是否具有灵活性</li>
+<li>划分是否避免了冗余计算和存储</li>
+<li>划分任务尺寸是否大致相当</li>
+<li>任务数与问题尺寸是否成比例</li>
+<li>功能分解是一种更深层次的分解，是否合理</li>
+</ul>
+<p><strong>四种通讯模式</strong></p>
+<ul>
+<li>局部/全局通讯（全局：All to All / Master-Worker     分治求和树）</li>
+<li>结构化/非结构化通讯（结构化通讯 每个任务的通讯模式是相同的）</li>
+<li>静态/动态通讯</li>
+<li>同步/异步通讯</li>
+</ul>
+<p><strong>通迅判据</strong></p>
+<ul>
+<li>所有任务是否执行<strong>大致相当</strong>的通讯</li>
+<li>是否尽可能的<strong>局部</strong>通讯</li>
+<li>通讯操作是否能<strong>并行</strong>执行</li>
+<li>同步任务的计算能否<strong>并行</strong>执行</li>
+</ul>
+<p>组合：通过<strong>增加任务的粒度</strong>和<strong>重复计算</strong>，可以减少通讯成本</p>
+<p><strong>组合判据</strong></p>
+<ul>
+<li>增加粒度是否减少了通讯成本</li>
+<li>重复计算是否已权衡了其得益</li>
+<li>是否保持了灵活性和可扩放性</li>
+<li>组合的任务数是否与问题尺寸成比例</li>
+<li>是否保持了类似的计算和通讯</li>
+<li>有没有减少并行执行的机会</li>
+</ul>
+<p>开发映射的主要目的：减少算法的总的执行时间</p>
+<ul>
+<li>把那些能够并发执行的任务放到不同的处理器上以<strong>增强并行度</strong></li>
+<li>把那些需频繁通信的任务置于同一个处理器上以<strong>提高局部性</strong></li>
+</ul>
+<p><strong>负载平衡算法</strong>（域分解）</p>
+<ul>
+<li>递归对剖（需全局知识，性能好但代价高）</li>
+<li>局部算法（代价小，但当负载变化大时调整很慢）</li>
+<li>概率方法（代价小，可扩放性好，但通信代价可能很大，且只适用于任务数远多于处理器数的情况）</li>
+<li>循环映射（实际是概率映射的一种形式，而概率方法比其他技术更可能导致可观的通信）</li>
+</ul>
+<p>当任务间很少有通信和/或通信模式很少呈局部性时，概率方法才可能是最有效</p>
+<p><strong>任务调度算法</strong>（功能分解）</p>
+<ul>
+<li>经理/雇员模式
+<ul>
+<li>经理（中心任务）负责任务分配，每个雇员重复地从经理那里请求并执行具体任务</li>
+<li>使用<strong>预取方法</strong>（以使计算和通信重叠）和<strong>缓存方法</strong>（使得雇员无任务时经理和雇员才通信）可以改善效率</li>
+</ul>
+</li>
+<li>非集中模式
+<ul>
+<li>无中心管理者的分布式调度法</li>
+<li>每个处理器中均维持一个任务池，这些任务池实际上就变成了可供请求者异步访问的、分布的数据结构</li>
+</ul>
+</li>
+</ul>
+<p>任务调度算法需要一种机构来<strong>检测何时操作结束</strong>。这种检测机构在经理-雇员算法中容易实现，因为经理能容易地决定何时雇员们都空闲了；在非集中式算法中则较困难，因为没有一个<strong>中央机构</strong>来记录雇员空闲状况</p>
+<p><strong>映射判据</strong></p>
+<ul>
+<li>采用<strong>集中式负载平衡</strong>方案，是否存在通讯瓶颈</li>
+<li>采用<strong>动态负载平衡</strong>方案，调度策略的成本如何</li>
+</ul>
+<p>并行计算：<strong>并行机</strong>上所作的计算，又称<strong>高性能计算</strong>或<strong>超级计算</strong></p>
+<p>网络直径：网络中任何两个节点之间的<strong>最长</strong>距离，即最大路径数</p>
+<p>对剖带宽：每秒钟内，在<strong>最小</strong>的对剖平面上通过<strong>所有连线</strong>的<strong>最大</strong>信息位（或字节）数</p>
+<p>嵌入：将网络中各节点<strong>映射</strong>到另一个网络中去</p>
+<p>膨胀系数</p>
+<p>标准互联网络：Myrinet, 高性能并行接口Hippl, 光纤通道FC, FDDI, ATM</p>
+<p>ATM：独立于介质的消息传输协议，基于报元交换机制，目的是将实时和突发数据的传输合并成单一的网络技术</p>
+<p>蝶式通信结构</p>
+<p>广播/收集/散射/全交换/循环移位</p>
+<p>SIMD和MISD更适合专用计算</p>
+<p>商用并行计算机中MIMD最常用（高性能服务器，超级计算机）</p>
+<p>系统结构灵活</p>
+<p>Gustafson：为了提高精度，必须加大计算量</p>
+<p>划分：分解成小的任务，开拓并发性</p>
+<p>并行算法的<strong>基本设计技术</strong></p>
+<ul>
+<li>划分设计技术</li>
+<li>分治设计技术
+<ul>
+<li>双调归并网络</li>
+</ul>
+</li>
+<li>平衡树设计技术</li>
+<li>倍增设计技术
+<ul>
+<li>表序问题</li>
+<li>求森林的根</li>
+</ul>
+</li>
+<li>流水线设计技术</li>
+</ul>
+<p><strong>并行计算模型</strong></p>
+<ul>
+<li>PRAM模型</li>
+<li>异步APRAM模型</li>
+<li>BSP模型</li>
+<li>logP模型</li>
+</ul>
+<p>任务粒度，如前所述，我们把Map拆分成了M个片段、把Reduce拆分成R个片段执行。理想情况下，M和R应当比集群中worker的机器数量要多得多。在每台worker机器都执行大量的不同任务能够提高集群的<strong>动态的负载均衡能力</strong>，并且能够加快<strong>故障恢复的速度</strong>：失效机器上执行的大量Map任务都可以分布到所有其他的worker机器上去执行。</p>
+<p>表面-容积效应启发我们，在其他条件等同的情况下，高维分解一般更有效，因为相当于一个给定的容积（计算），它减少了表面积（通信）。因此从效率的角度看，增加粒度的最好办法是在所有的维上组合任务</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://seline02.github.io">Seline</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://seline02.github.io/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/">https://seline02.github.io/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://seline02.github.io" target="_blank">Seline's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">西瓜书-强化学习</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/15/Acoustic-Feature/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Acoustic Feature</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/24/%E7%A9%BA%E9%97%B4%E8%BD%AC%E5%BD%95%E7%BB%84/" title="空间转录组"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="空间转录组"/></a><div class="content"><a class="title" href="/2022/12/24/%E7%A9%BA%E9%97%B4%E8%BD%AC%E5%BD%95%E7%BB%84/" title="空间转录组">空间转录组</a><time datetime="2022-12-24T15:21:00.000Z" title="发表于 2022-12-24 23:21:00">2022-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/30/%E9%AB%98%E7%BA%A7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/" title="高级机器学习部分笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高级机器学习部分笔记"/></a><div class="content"><a class="title" href="/2022/11/30/%E9%AB%98%E7%BA%A7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/" title="高级机器学习部分笔记">高级机器学习部分笔记</a><time datetime="2022-11-30T15:37:26.000Z" title="发表于 2022-11-30 23:37:26">2022-11-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" title="西瓜书-强化学习"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="西瓜书-强化学习"/></a><div class="content"><a class="title" href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" title="西瓜书-强化学习">西瓜书-强化学习</a><time datetime="2022-11-17T15:58:45.000Z" title="发表于 2022-11-17 23:58:45">2022-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/" title="分布式笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="分布式笔记"/></a><div class="content"><a class="title" href="/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/" title="分布式笔记">分布式笔记</a><time datetime="2022-11-08T06:01:22.000Z" title="发表于 2022-11-08 14:01:22">2022-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/15/Acoustic-Feature/" title="Acoustic Feature"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Acoustic Feature"/></a><div class="content"><a class="title" href="/2022/10/15/Acoustic-Feature/" title="Acoustic Feature">Acoustic Feature</a><time datetime="2022-10-15T15:45:04.000Z" title="发表于 2022-10-15 23:45:04">2022-10-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [ ['$','$'], ["\\(","\\)"]],
