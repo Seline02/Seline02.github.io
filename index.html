@@ -48,7 +48,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-02-28 17:28:26'
+  postUpdate: '2023-07-29 12:20:04'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -137,219 +137,244 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Seline's blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/12/24/%E7%A9%BA%E9%97%B4%E8%BD%AC%E5%BD%95%E7%BB%84/" title="空间转录组"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="空间转录组"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/12/24/%E7%A9%BA%E9%97%B4%E8%BD%AC%E5%BD%95%E7%BB%84/" title="空间转录组">空间转录组</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-12-24T15:21:00.000Z" title="发表于 2022-12-24 23:21:00">2022-12-24</time></span></div><div class="content">“空间转录组”（ST）是一项能够保留组织空间位置并同时解析组织切片转录组信息的技术。
-空间转录组研究中的一项关键任务是识别跨空间位置具有不同空间表达模式的空间变异基因（SVG）。
-Scanpy数据结构：AnnData
-
-scRNA-seq的reads count数据 指的就是矩阵里的那些数值？
-normalize：每个细胞的total count相等
-
-total count相等，单个的count服从正态分布
-Γ(x+1)=x!\Gamma(x+1)=x!Γ(x+1)=x!
-https://zhuanlan.zhihu.com/p/72408777
-
-https://www.jianshu.com/p/4b3a522ad777 考虑批次？
-deepcluster是先只考虑ZINB，然后参数固定，隐层固定
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Seline's blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数">线性代数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-08T07:05:38.000Z" title="发表于 2023-05-08 15:05:38">2023-05-08</time></span></div><div class="content">
+对系数矩阵 $A$ 按列分块，记 $A=[\alpha_1,\alpha_2,\alpha_3,\alpha_4]$，得 $x_1\alpha_1+x_2\alpha_2+x_3\alpha_3+x_4\alpha_4=b$。
+用向量的语言：方程组问题就可转换为向量 $b$ 由向量 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性表出的问题
 
 
 
-we see that a separate gp prior is placed over the entire data set in each of the l latent channels. additionally we make use of the so-call ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/11/30/%E9%AB%98%E7%BA%A7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/" title="高级机器学习部分笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高级机器学习部分笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/30/%E9%AB%98%E7%BA%A7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/" title="高级机器学习部分笔记">高级机器学习部分笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-30T15:37:26.000Z" title="发表于 2022-11-30 23:37:26">2022-11-30</time></span></div><div class="content">chap12
+
+==伴随矩阵==：由矩阵 $A$ 的行列式 $|A|$ 所有的代数余子式所构成的形如
 
 
-可分情况 经验误差为0
+\left(
+\begin{matrix}
+A_{11} & A_{21} & ... & A_{n1}\\
+A_{12} & A_{22} & ... & A_{n2}\\
+A_{13} & A_{23} & ... & A_{n3}\\
+... & ...& ... & ...\\
+A_{1n} & A_{2n} & ... & A_{nn}
+\end{matrix}
+\right)的矩阵称为矩阵 $A$ 的伴随矩阵，记为 $A^*$
 
-chap13 半监督学习
-
-
-主动学习：使用尽量少的查询来获得尽量好的性能，引入了额外的专家知识
-
-
-半监督学习：学习器不依赖外界交互、自动地利用未标记样本来提升学习性能
-
-
-利用未标记样本，假设数据分布：聚类假设（同一个聚类中有相似的输出值）；流行假设（流行结构上邻近的样本有相似输出值）  **本质：**相似的样本有相似的输出
-
-
-半监督学习：纯半监督学习（未标记样本≠待预测数据）；直推学习（未标记样本=待预测数据）
-
-
-生成式方法
-
-生成式方法：假设数据由一个潜在模型生成.
-方法：基于EM的极大似然估计
+公式
+$AA^=A^A=|A|E$
+$(A^)^{-1}=(A^{-1})^= ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AIMA笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记">AIMA笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-23T09:51:42.000Z" title="发表于 2023-03-23 17:51:42">2023-03-23</time></span></div><div class="content">AI 历史
+阶段
+推理期：60-70年代  至  80年代初期
+知识期：80年代初期  至  90年代中期
+专家系统expert systems
 
 
+学习期：90年代中期  至  
 
-关键：模型假设必须正确
 
-半监督SVM
+两次寒冬
+第一次寒冬开始于1974至1977，也被称为“AI危机”，主要是由于当时作为AI研究的核心技术——知识表示认知机制表现不佳，
+机器翻译“寂静的十年”
+联结主义的衰落（Minsky and Papert’s book Perceptrons：感知器只能被训练用于解决线性可分问题，异或问题就不行。对于多层网络没有算法能用来训练）
+组合爆炸问题（计算量爆炸），但计算能力弱（Lighthill report）
 
-半监督SVM
-基本假设：低密度分割
-找到能分开两类标记样本，且穿过数据低密度区域的划分超平面
 
-图半监督学习
+第二次寒冬主要指1987年英国素有“机器人热”的情况出现突然转折，以及90年代以后因无法解决实际问题而导致投资者收回投资撤出的情况。
+John McCarthy 对专家系统进行批评说，它们缺少常识性知识
+人工智能领域当时主要使用约翰麦卡锡的LISP编程语言，逐步发展的LISP机器被蓬勃发展的个人电脑击败，专用LISP机器硬件销售市场严重崩溃
 
-标签传播算法
-当 xi,xjx_i,x_jxi​,xj​ 越相似，wijw_{ij}wij​ 指数级变大，最小化能量函数能使 f(xi),f(xj)f(x_i),f(x_j)f(xi​),f(xj​) 越相近。因此算法倾向于使得：距离较近的样本具有相近的输出 。
-矩阵求逆开销大，改 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" title="西瓜书-强化学习"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="西瓜书-强化学习"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" title="西瓜书-强化学习">西瓜书-强化学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-17T15:58:45.000Z" title="发表于 2022-11-17 23:58:45">2022-11-17</time></span></div><div class="content">
+
+
+
+1956 Dartmouth会议（阿兰图灵 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记">神经网络笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time></span></div><div class="content">第二讲 神经元01 神经元模型
+生物神经元信号传递过程：其他神经元信号（输入信号）通过树突传递到细胞体，细胞体把从其他多个神经元传递进来的输入信号进行合并加工，然后再通过轴突前端的突触将输出信号传递给别的神经元
+MP神经元
+多输入单输出
+分兴奋性输入、抑制性输入
+空间整合特性、阈值特性
+输入输出间有时延，取决于突触间传播的延迟
+忽略时间整合作用和不应期（不能连续激发）
+二值网络（0/1）
+权为正：刺激；权为负：抑制
+全或无：只有激发或不激发
+绝对抑制
+输出变为兴奋状态：接收到k个或者更多的刺激输入，没有抑制输入（有一个抑制信号就抑制？）
+
+
+
+02 神经元的组成成分
+阈值函数
+Sigmoid函数：输入（-∞,+∞）映射到（0,1）
+非线性压缩函数
+$sigmoid(x)=\frac{1}{1+e^{-x}}$
+缺点：
+非中心化。
+输出都为正，导致zigzag式更新梯度。相当于把上游梯度的符号传回来，这意味着所有关于w的梯度全为正值或者全为负值，那么它们就会总是朝着同一个方向移动。https://blog.csdn.net/weixin_38646522/article/details/ ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自然语言处理笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记">自然语言处理笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time></span></div><div class="content">编码器-解码器框架
+
+编码整个源端句子的信息，容易成为信息承载的瓶颈
+翻译过程不具有可解释性
+目标端解码某个特定单词时，应该重点关注源端相关的单词
+
+BERT
+Bidirectional Encoder Representation from Transformers
+它强调了不再像以往一样采用传统的单向语言模型或者把两个单向语言模型进行浅层拼接的方法进行预训练，而是采用新的masked language model（MLM），以致能生成深度的双向语言表征。
+https://zhuanlan.zhihu.com/p/98855346
+
+您好，这是Bing。😊
+GloVe和word2vec都是词嵌入模型，可以根据词汇的共现信息，将词汇编码成一个向量。² 两者的区别在于，word2vec是一个基于预测的模型，而GloVe是一个基于计数的模型。¹
+word2vec通过预测中心词或上下文词来学习词向量，而GloVe通过利用整个语料库的全局词-词共现矩阵来学习词向量。³ 这导致了两种模型生成的词向量具有不同的特性。³
+好的，我来给您介绍一些更多的细节。
+word2vec有两种训练方法：连续词袋 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多智能体笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记">多智能体笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-15T08:05:41.000Z" title="发表于 2023-03-15 16:05:41">2023-03-15</time></span></div><div class="content">2.1 智能AgentAgent和环境
+Agent核心概念：自治性
+Agent的定义：Agent是处在某个环境中的计算机系统，该系统有能力在这个环境中自主行动以实现其设计目标
+Agent和对象的区别
+Agent是自治的、灵活的、主动的
+Agent是主动的、有利益最大化的目标；对象是被动的、没有利益最大化的目标
+
+
+Agent和专家系统的区别
+经典专家系统是与现实分离的，与任何环境没有直接联系
+一般不能采取反应式、预动的行动
+一般没有社会行为能力，不能进行合作、协调和协商
+
+
+
+
+书上：
+对象 VS Agent
+自治：与对象相比Agent有更强的自治性，特别是它们自己决定是否接受其他Agent的请求执行一个动作
+灵活：Agent具有灵活的（反应的、预动的、社会的）行为能力，标准的对象模型根本没有这种行为能力
+主动：多Agent系统本质上是多线程的，其中每个Agent至少假设有一个控制线程
+
+
+相似处
+都封装了一些状态
+可以在这些状态下执行某些动作或者方法
+可以通过消息传递进行通信
+
+
+
+
+智能Agent应具有哪些能力
+
+反应性
+一个反应式的系统能与环境持续地交互，对环境发生的变化以及时的 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/06/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" title="数学基础"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数学基础"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/06/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" title="数学基础">数学基础</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-06T14:19:55.000Z" title="发表于 2023-03-06 22:19:55">2023-03-06</time></span></div><div class="content">
+协方差矩阵（在LDA/PCA等中用到）https://blog.csdn.net/itplus/article/details/11452743
+样本矩阵，每个随机变量 $m$ 个样本
+独立 $\rightarrow$ 不相关 $\Leftrightarrow$ 协方差为零
+
+
+相关系数 也常称“线性相关系数”。这是因为，实际上相关系数并不是刻画了 $\xi,\eta$ 之间的“一般”关系程度，而只是“线性”关系的程度
+若每个随机变量的 $m$ 个样本的均值都等于0，则有协方差矩阵 $C=\frac{1}{m}SS^T$，$S$ 是样本矩阵，每一行是 $m$ 个采样，一共 $n$ 个变量 $n$ 行，秩和 $S$ 一样（通过零空间维度相等来证）
+协方差矩阵 $\frac{1}{m}XX^T$ 的第 $i$ 行第 $j$ 列的元素表示 $X$ 中第 $i$ 行和 $X$ 第 $j$ 行的方差（$i=j$）或协方差（$i\not=j$）。注意：协方差矩阵对角线元素为各行的方差
+一般地，$C=\frac{1}{m}\sum^m_{i=1}(\beta_i-\beta_0)(\beta_i- ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/03/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="机器学习笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="机器学习笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="机器学习笔记">机器学习笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-06T08:49:45.000Z" title="发表于 2023-03-06 16:49:45">2023-03-06</time></span></div><div class="content">第一章 绪论
+假设空间
+学习过程是在所有假设组成的空间中进行搜索的过程
+目标：找到与训练集“匹配”的假设
+
+
+版本空间：与训练集一致的假设集合
+归纳偏好：机器学习算法在学习过程中对某种类型假设的偏好
+任何一个有效的机器学习算法必有其偏好
+奥卡姆剃刀原则：若有多个假设与观察一致，则选最简单的那个
+NFL 定理：一个算法 $\mathcal{E}_a$ 若在某些问题上比另一个算法 $\mathcal{E}_b$ 好，必存在另一些问题，$\mathcal{E}_b$ 比 $\mathcal{E}_a$ 好
+前提：所有“问题”出现的机会相同、或所有问题同等重要
+
+
+
+
+
+第二章 模型评估与选择2.1 经验误差与过拟合
+学习器在训练集上的误差称为“训练误差”或“经验误差”，在新样本上的误差称为“泛化误差”
+机器学习面临的问题通常是NP难甚至更难，而有效的学习算法必然是在多项式时间内运行完成，若可彻底避免过拟合，则通过经验误差最小化就能获得最优解，这就意味着我们构造性地证明了“P=NP”；因此，只要相信“P≠NP”，过拟合就不可避免
+
+2.2 评估方法
+留出法
+
+留出法（hold-out）：直接将 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/03/01/%E7%AE%97%E6%B3%95/" title="算法与数据结构"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="算法与数据结构"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/03/01/%E7%AE%97%E6%B3%95/" title="算法与数据结构">算法与数据结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-01T08:42:55.000Z" title="发表于 2023-03-01 16:42:55">2023-03-01</time></span></div><div class="content">时间复杂度
+RAM？
+算法的正确性：
+对任何一个输入，算法在有限步完成，且输出结果正确
+不完美的算法也有用（只要准确率较高）
+猴子算法：每次随机排序。时间复杂度 $O(n*n!)$，每次检查是否排好序需要 $O(n)$。最坏时间复杂度无穷
+
+
+$\lim_{n\rightarrow ∞}\frac{f(n)}{g(n)}=c_0&gt;0 \Rightarrow f(n)\in \Theta(g(n)) $，反之则不一定成立
+
+例如 $f(n)=n(1+\sin n),g(n)=n$
+
+
+斯特林近似
+
+$n!\approx \sqrt{2\pi n}(\frac{n}{e})^n$
+$\sqrt{c_0 n}(\frac{n}{e})^n\leq n!\leq \sqrt{c_1 n}(\frac{n}{e})^n$
+由此还可以推 $\lg(n!)=\Theta(n\lg n)$
+
+
+
+
+
+
+尾递归
+每次执行过程中至多只会进行一次递归
+递归调用返回后原始函数也立刻返回
+
+
+
+
+哪个大，指数就是谁
+
+
+$f(n)\not\in O(n^{1-\epsilon})$
+
+https://ww ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/02/28/%E6%A6%82%E7%8E%87%E8%AE%BA/" title="概率论"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="概率论"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/02/28/%E6%A6%82%E7%8E%87%E8%AE%BA/" title="概率论">概率论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-28T09:45:01.000Z" title="发表于 2023-02-28 17:45:01">2023-02-28</time></span></div><div class="content">第一章 随机事件与概率
+随机现象：事件发生的条件与结果之间具有不确定性关系。在一定条件下可能出现，也可能不出现的现象。
+必然现象：事件发生的条件与结果之间具有确定性关系。在一定条件下相应的结果必然发生的现象。
+随机现象二重性
+偶然性：对随机现象进行一次观察，结果具有不确定性
+必然性：对随机现象进行大量重复观察，结果呈现一定统计规律性
+
+
+概率论与数理统计：研究和揭示随机现象的规律
+随机试验：在相同条件下重复进行一系列实验和观察
+随机试验三个特点
+可重复：可在相同的条件下重复进行
+多结果：结果不止一个，所有可能结果事先已知
+不确定：试验前无法预测/确定哪一种结果
+
+
+样本空间：随机试验$E$所有可能的结果构成的集合，记 $\Omega$
+样本点：样本空间的每个元素，即试验$E$的每一种结果，记 $w$
+随机事件：某些样本点构成的集合，本质是样本空间的子集
+基本事件：只含一个样本点
+必然事件：全集，$\Omega$
+不可能事件：空集
+
+
+包含事件：事件$A$发生必将导致事件$B$发生，称$B$包含$A$，记 $A\subset B$
+
+A发生可以理解成A有，B必发生可以理解为B一定有。A有 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" title="西瓜书-强化学习"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="西瓜书-强化学习"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" title="西瓜书-强化学习">西瓜书-强化学习</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-17T15:58:45.000Z" title="发表于 2022-11-17 23:58:45">2022-11-17</time></span></div><div class="content">
 策略迭代：策略评估+策略改进
 
-​					策略改进后，每个状态下最优的选择可能会变（后继状态的value变了），所以继续策略评估…（策略评估时也是迭代地进行，迭代至每个状态的value值不变了）
-​		策略评估：反复算V；策略迭代：先算Q，取arg max Q作为策略
+​                    策略改进后，每个状态下最优的选择可能会变（后继状态的value变了），所以继续策略评估…（策略评估时也是迭代地进行，迭代至每个状态的value值不变了）
+​        策略评估：反复算V；策略迭代：先算Q，取arg max Q作为策略
 
 值迭代：每次v直接取最大的Q(s,a)
 
-​		把贝尔曼最优方程作为更新规则
-
+​        把贝尔曼最优方程作为更新规则
 
 免模型：将估计对象从V变为Q；只能从起始状态开始探索，探索过程中估计 状态-动作对值函数
-
 
 “同策略”蒙特卡洛强化学习算法：（on-policy）
 针对模型未知，需要自己从头探索。策略评估和策略改进迭代
 
 
-​		策略评估：采一条轨迹，对其中的每个状态-动作对增量式计算；
-​		策略改进：同之前，保留 ϵ\epsilonϵ 的概率均匀探索，产生的时 ϵ−\epsilon-ϵ−贪心策略
-
+​        策略评估：采一条轨迹，对其中的每个状态-动作对增量式计算；
+​        策略改进：同之前，保留 $\epsilon$ 的概率均匀探索，产生的时 $\epsilon-$贪心策略
 
 “异策略”蒙特卡洛强化学习算法：（off-policy）
-π\piπ 是确定性策略（对每个状态，其中一个执行动作的概率为1）；π′\pi&#x27;π′是 π\piπ 的 ϵ−\epsilon-ϵ− 贪心策略
-策略评估：采一条轨迹，对于每一对状态- ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/" title="分布式笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="分布式笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/" title="分布式笔记">分布式笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-11-08T06:01:22.000Z" title="发表于 2022-11-08 14:01:22">2022-11-08</time></span></div><div class="content">BSP模型：https://blog.csdn.net/sydpz1987/article/details/51517851
-均匀洗牌：左移一位
-蝶式：最高位最低位互换
-P41 并非所有网络之间可实现完美嵌入，例如一棵完全二叉树，除非其高度为2，否则无法将其完美嵌入到20D网孔中
-P43 CPU板级上的总线称为本地总线…  交叉开关
-​		级间连接方式ISC：均匀洗牌，蝶式，纵横交叉
-https://blog.csdn.net/weixin_43934607/article/details/111680075
-
-
-https://zhuanlan.zhihu.com/p/347217293
-而无论是哪一种结构，都可能会出现数据共享的问题，即两个不同处理机的 Cache 存放了缓存了同一个主存单元的块，即共享数据，这种情况就可能会导致 Cache 一致性问题的出现。
-
-2o
-=============
-动态互连网络权衡、比较性能：表格+
-总线造价最低，单易冲突；交叉开关造价最高，但带宽和选路性能最好；多级互连网络是总线与交叉开关的折中，主要优点采用模块结构，可扩展性好，但延迟随网络尺寸对 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/15/Acoustic-Feature/" title="Acoustic Feature"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Acoustic Feature"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/15/Acoustic-Feature/" title="Acoustic Feature">Acoustic Feature</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-15T15:45:04.000Z" title="发表于 2022-10-15 23:45:04">2022-10-15</time></span></div><div class="content">
-把一个声音讯号变成一个vector（frame）
-
-
-
-https://zhuanlan.zhihu.com/p/102413549
-
-
-
-u(t)：由肺部的气管进入口腔的气（excitation），出来的声音x(t)，中间经过了唇齿舌
-vocal tract：声道，看成一个系统
-
-
-
-
-u是气，有两种，周期的或非周期的
-
-
-在口腔处，有声带，会震动
-
-
-在voiced一行，前面一个信号经过唇齿舌，会变成后面一个
-
-
-每一股气产生一个峰
-
-
-声带振动，麻的，是有周期的（voiced，浊音）
-
-
-
-
-清音 声带不震动，气一直出来，像random noise
-smoothly从一个transition到另一个
-
-
-
-
-
-A1ejϕ1ejw1tA_1e^{j\phi_1}e^{jw_1t}A1​ejϕ1​ejw1​t的实部是 A1cos⁡(w1t+ϕ1)A_1\cos(w_1t+\phi_1)A1​cos(w1​t+ϕ1​)
-
-
-X[k] 轴上的每一个点对应的是一个基向量 i⃗,j⃗...\vec{i},\vec{j}...i,j​...之类的 ，A1ejϕ1A_1e^{j\phi_1}A ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/10/%E6%98%93%E6%96%B9%E8%BE%BE%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/" title="易方达项目笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="易方达项目笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/10/%E6%98%93%E6%96%B9%E8%BE%BE%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/" title="易方达项目笔记">易方达项目笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-10T10:10:13.000Z" title="发表于 2022-10-10 18:10:13">2022-10-10</time></span></div><div class="content">https://www.zhihu.com/question/24190826
-由于浊音是声带振动产生，所以浊音是与共振峰密切相关的，可以认为共振峰处就是元音
-而一个元音，会同时受舌头的位置和嘴唇形状的复合影响，发音器官由于振动产生多个共振频率，所以一个音会有3~5个共振峰；
-实验研究到，一个元音用三个共振峰表示，复杂的辅音或鼻音，要用五个共振峰；
-有多少个共振峰，就代表有多少个共振频率；
-语谱图是三维的，第一维横轴是时间，第二维纵轴是频率，第三维颜色是幅值；频率范围是该语音的采样频率的一半；
-频谱图是二维的，第一维横轴是频率，第二维纵轴是幅值；
-语谱图和频谱图的区别：频谱图只保留了频率和幅值信息而没有相位信息，而语谱图展示了频率、幅值和相位信息，换句话说语谱图展示了各个频率的谐波
-
-
-多数语言中的元音均为浊音
-
-
-汉明窗在窗口的边界处把信号值收缩到零，从而避免了信号的不连续性
-
-
-可能测量的最大频率的波就是那些频率等于抽样率一半的波（因为每周需要两个样本）
-
-
-电话语音使用的一个常见的压缩格式是μ\muμ律，是一种对数压缩算法，解释是人类的听觉在音强较小时比音强较大时更加敏感
-
-
-基 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/05/PyTorch%E7%AC%94%E8%AE%B0%EF%BC%88%E6%9D%82%EF%BC%89/" title="PyTorch笔记（杂）"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="PyTorch笔记（杂）"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/05/PyTorch%E7%AC%94%E8%AE%B0%EF%BC%88%E6%9D%82%EF%BC%89/" title="PyTorch笔记（杂）">PyTorch笔记（杂）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-05T08:44:29.000Z" title="发表于 2022-10-05 16:44:29">2022-10-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="content">随机种子
-
-https://blog.csdn.net/weixin_44211968/article/details/123769010?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-123769010-blog-106467809.pc_relevant_multi_platform_whitelistv3&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-123769010-blog-106467809.pc_relevant_multi_platform_whitelistv3&amp;utm_relevant_index=1
-
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/02/%E5%A4%8D%E6%8C%87%E6%95%B0%E4%BF%A1%E5%8F%B7/" title="复指数信号"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="复指数信号"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/02/%E5%A4%8D%E6%8C%87%E6%95%B0%E4%BF%A1%E5%8F%B7/" title="复指数信号">复指数信号</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-10-02T11:33:05.000Z" title="发表于 2022-10-02 19:33:05">2022-10-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/">数字信号处理</a></span></div><div class="content">https://blog.csdn.net/HiWangWenBing/article/details/109694794
-
-
-任何复数与i相乘，表明把这个复数代表的向量逆时针旋转90度
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/09/29/AI%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0/" title="AI算法工程师手册笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AI算法工程师手册笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/29/AI%E7%AE%97%E6%B3%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E6%89%8B%E5%86%8C%E7%AC%94%E8%AE%B0/" title="AI算法工程师手册笔记">AI算法工程师手册笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-29T07:15:39.000Z" title="发表于 2022-09-29 15:15:39">2022-09-29</time></span></div><div class="content">https://www.bookstack.cn/read/huaxiaozhuan-ai/spilt.3.a1c8cb11a2e246b2.md
-统计学习
-15.隐马尔可夫模型
-二、HMM基本问题
-2.2.2 无监督学习
-https://welts.xyz/2021/11/08/em/
-
-2.3 预测问题
-2.3.2 维特比算法
-https://www.zhihu.com/question/20136144
-16.概率图与条件随机场
-三、马尔科夫随机场
-3.4 图像降噪应用
-
-这张图假设的是噪声是依据图像产生的
-17. 边际概率推断
-一、精确推断
-
-二、近似推断
-蒙特卡洛方法
-
-针也可以完全在两条平行线中间
-马尔科夫链
-
-并不是说转移矩阵P收敛，而是概率分布收敛，即P的n次方的每一行会收敛
-MCMC采样
-
-</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/09/28/%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2/" title="小波变换"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="小波变换"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/09/28/%E5%B0%8F%E6%B3%A2%E5%8F%98%E6%8D%A2/" title="小波变换">小波变换</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-28T14:32:01.000Z" title="发表于 2022-09-28 22:32:01">2022-09-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/">数字信号处理</a></span></div><div class="content">https://www.cnblogs.com/jfdwd/p/9249850.html
-傅立叶变换是把信号波分解成不同频率的正弦波的叠加和
-小波变换就是把一个信号分解成一系列的小波
-小波：在整个时间范围的幅度平均值是0，具有有限的持续时间和突变的频率和振幅，可以是不规则，也可以是不对称
-小波直接把傅里叶变换的基给换了——将无限长的三角函数基换成了有限长的会衰减的小波基。这样不仅能够获取频率，还可以定位到时间了
-
-这样，我们就定义了基本的V0这个子空间。刚才说了，这个子空间的基都是对的整数时域变换，这里我们称为scaling function，所以换个说法，就是说这里整个子空间V0，由scaling function和其时域变换的兄弟们span。
-
-
-
-小波函数——母函数——wavelet function 有正有负；
-父函数——scaling function 大于等于0
-
-
-Aggarwal2015_Book_DataMining的2.4.4.1章
-</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/24/%E7%A9%BA%E9%97%B4%E8%BD%AC%E5%BD%95%E7%BB%84/" title="空间转录组"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="空间转录组"/></a><div class="content"><a class="title" href="/2022/12/24/%E7%A9%BA%E9%97%B4%E8%BD%AC%E5%BD%95%E7%BB%84/" title="空间转录组">空间转录组</a><time datetime="2022-12-24T15:21:00.000Z" title="发表于 2022-12-24 23:21:00">2022-12-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/30/%E9%AB%98%E7%BA%A7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/" title="高级机器学习部分笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高级机器学习部分笔记"/></a><div class="content"><a class="title" href="/2022/11/30/%E9%AB%98%E7%BA%A7%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/" title="高级机器学习部分笔记">高级机器学习部分笔记</a><time datetime="2022-11-30T15:37:26.000Z" title="发表于 2022-11-30 23:37:26">2022-11-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" title="西瓜书-强化学习"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="西瓜书-强化学习"/></a><div class="content"><a class="title" href="/2022/11/17/%E5%80%BC%E8%BF%AD%E4%BB%A3%E4%B8%8E%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3/" title="西瓜书-强化学习">西瓜书-强化学习</a><time datetime="2022-11-17T15:58:45.000Z" title="发表于 2022-11-17 23:58:45">2022-11-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/" title="分布式笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="分布式笔记"/></a><div class="content"><a class="title" href="/2022/11/08/%E5%88%86%E5%B8%83%E5%BC%8F%E7%AC%94%E8%AE%B0/" title="分布式笔记">分布式笔记</a><time datetime="2022-11-08T06:01:22.000Z" title="发表于 2022-11-08 14:01:22">2022-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/15/Acoustic-Feature/" title="Acoustic Feature"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Acoustic Feature"/></a><div class="content"><a class="title" href="/2022/10/15/Acoustic-Feature/" title="Acoustic Feature">Acoustic Feature</a><time datetime="2022-10-15T15:45:04.000Z" title="发表于 2022-10-15 23:45:04">2022-10-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+$\pi$ 是确定性策略（对每个状态，其中一个执行动作的概率为1）；$\pi’$是 $\pi$ 的 $\epsilon-$ ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="page-number" href="/page/3/#content-inner">3</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数"/></a><div class="content"><a class="title" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数">线性代数</a><time datetime="2023-05-08T07:05:38.000Z" title="发表于 2023-05-08 15:05:38">2023-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AIMA笔记"/></a><div class="content"><a class="title" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记">AIMA笔记</a><time datetime="2023-03-23T09:51:42.000Z" title="发表于 2023-03-23 17:51:42">2023-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络笔记"/></a><div class="content"><a class="title" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记">神经网络笔记</a><time datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自然语言处理笔记"/></a><div class="content"><a class="title" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记">自然语言处理笔记</a><time datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多智能体笔记"/></a><div class="content"><a class="title" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记">多智能体笔记</a><time datetime="2023-03-15T08:05:41.000Z" title="发表于 2023-03-15 16:05:41">2023-03-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">强化学习</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95/"><span class="card-category-list-name">控制理论与方法</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/"><span class="card-category-list-name">数字信号处理</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">机器学习</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">深度学习</span><span class="card-category-list-count">10</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/PPO/" style="font-size: 1.1em; color: #999">PPO</a> <a href="/tags/PyTorch/" style="font-size: 1.5em; color: #99a9bf">PyTorch</a> <a href="/tags/transformer/" style="font-size: 1.1em; color: #999">transformer</a> <a href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0/" style="font-size: 1.1em; color: #999">傅里叶级数</a> <a href="/tags/%E5%85%B1%E8%BD%AD%E5%85%88%E9%AA%8C/" style="font-size: 1.1em; color: #999">共轭先验</a> <a href="/tags/%E5%8D%B7%E7%A7%AF/" style="font-size: 1.3em; color: #99a1ac">卷积</a> <a href="/tags/%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD/" style="font-size: 1.1em; color: #999">变分推断</a> <a href="/tags/%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF/" style="font-size: 1.1em; color: #999">拉普拉斯</a> <a href="/tags/%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">迁移学习</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">18</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">13</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">39</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-02-28T09:28:26.074Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">强化学习</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95/"><span class="card-category-list-name">控制理论与方法</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">机器学习</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">深度学习</span><span class="card-category-list-count">10</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/PPO/" style="font-size: 1.1em; color: #999">PPO</a> <a href="/tags/PyTorch/" style="font-size: 1.5em; color: #99a9bf">PyTorch</a> <a href="/tags/transformer/" style="font-size: 1.1em; color: #999">transformer</a> <a href="/tags/%E5%85%B1%E8%BD%AD%E5%85%88%E9%AA%8C/" style="font-size: 1.1em; color: #999">共轭先验</a> <a href="/tags/%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD/" style="font-size: 1.1em; color: #999">变分推断</a> <a href="/tags/%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">迁移学习</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">9</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">25</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-29T04:20:04.748Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

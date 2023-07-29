@@ -1,0 +1,407 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>线性代数 | Seline's blog</title><meta name="author" content="Seline"><meta name="copyright" content="Seline"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="对系数矩阵 $A$ 按列分块，记 $A&#x3D;[\alpha_1,\alpha_2,\alpha_3,\alpha_4]$，得 $x_1\alpha_1+x_2\alpha_2+x_3\alpha_3+x_4\alpha_4&#x3D;b$。 用向量的语言：方程组问题就可转换为向量 $b$ 由向量 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性表出的问题     &#x3D;&#x3D;伴随矩阵&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性代数">
+<meta property="og:url" content="https://seline02.github.io/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/index.html">
+<meta property="og:site_name" content="Seline&#39;s blog">
+<meta property="og:description" content="对系数矩阵 $A$ 按列分块，记 $A&#x3D;[\alpha_1,\alpha_2,\alpha_3,\alpha_4]$，得 $x_1\alpha_1+x_2\alpha_2+x_3\alpha_3+x_4\alpha_4&#x3D;b$。 用向量的语言：方程组问题就可转换为向量 $b$ 由向量 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性表出的问题     &#x3D;&#x3D;伴随矩阵&#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2023-05-08T07:05:38.000Z">
+<meta property="article:modified_time" content="2023-05-15T07:24:36.403Z">
+<meta property="article:author" content="Seline">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://seline02.github.io/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '线性代数',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-05-15 15:24:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">线性代数</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-08T07:05:38.000Z" title="发表于 2023-05-08 15:05:38">2023-05-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-15T07:24:36.403Z" title="更新于 2023-05-15 15:24:36">2023-05-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="线性代数"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ul>
+<li>对系数矩阵 $A$ 按列分块，记 $A=[\alpha_1,\alpha_2,\alpha_3,\alpha_4]$，得 $x_1\alpha_1+x_2\alpha_2+x_3\alpha_3+x_4\alpha_4=b$。<ul>
+<li>用向量的语言：方程组问题就可转换为向量 $b$ 由向量 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性表出的问题</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>==伴随矩阵==：由矩阵 $A$ 的行列式 $|A|$ 所有的代数余子式所构成的形如</li>
+</ul>
+<script type="math/tex; mode=display">
+\left(
+\begin{matrix}
+A_{11} & A_{21} & ... & A_{n1}\\
+A_{12} & A_{22} & ... & A_{n2}\\
+A_{13} & A_{23} & ... & A_{n3}\\
+... & ...& ... & ...\\
+A_{1n} & A_{2n} & ... & A_{nn}
+\end{matrix}
+\right)</script><p>的矩阵称为矩阵 $A$ 的伴随矩阵，记为 $A^*$</p>
+<ul>
+<li>公式<ul>
+<li>$AA^<em>=A^</em>A=|A|E$</li>
+<li>$(A^<em>)^{-1}=(A^{-1})^</em>=\frac{1}{|A|}A$</li>
+<li>$(kA)^<em>=k^{n-1}A^</em>$</li>
+<li>$(A^<em>)^T=(A^T)^</em>$</li>
+<li>$|A^*|=|A|^{n-1}$</li>
+<li>$(A^<em>)^</em>=|A|^{n-2}A$</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>$n$ 阶矩阵 $A$ 可逆的充分必要条件<ul>
+<li>存在 $n$ 阶矩阵 $B$，使 $AB=E$（或 $BA=E$）</li>
+<li>$|A|\not=0$，或<strong>秩</strong> $r(A)=n$，或 $A$ 的列（行）向量<strong>线性无关</strong></li>
+<li><strong>齐次方程组</strong> $Ax=0$ 只有零解</li>
+<li>$\forall b$，<strong>非齐次线性方程组</strong> $Ax=b$ 总有唯一解</li>
+<li>矩阵 $A$ 的<strong>特征值</strong>全不为 0</li>
+<li>能表示成一些<strong>初等矩阵</strong>的乘积 $P_t…P_2P_1A=E$</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>齐次线性方程组</p>
+<ul>
+<li><p>==基础解系==：如果 $\eta_1,\eta_2,…,\eta_t$ 是齐次方程组 $Ax=0$ 的解，而且满足</p>
+<ul>
+<li>$\eta_1,\eta_2,…,\eta_t$ <strong>线性无关</strong></li>
+<li>$Ax=0$ 的任一个解 $\eta$ 都可由 $\eta_1,\eta_2,…,\eta_t$ <strong>线性表出</strong></li>
+</ul>
+<p>则称 $\eta_1,\eta_2,…,\eta_t$ 是 $Ax=0$ 的一个基础解系</p>
+</li>
+<li><p>齐次方程组 $A_{m×n}x=0$ 有<strong>非零解</strong>  $\Leftrightarrow$  $r(A)&lt;n$ （列数）</p>
+<ul>
+<li>当 $m&lt;n$ 时，$Ax=0$ 必有非零解</li>
+<li>当 $m=n$ 时，$Ax=0$ 有非零解 $\Leftrightarrow$  $|A|=0$</li>
+</ul>
+</li>
+<li><p>基础解系：$n-r$ 个解向量</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>==非齐次方程组== $Ax=b$ （$b$ 是非零向量）<ul>
+<li>非齐次方程组有解 $\Leftrightarrow$ $r(A)=r(\overline{A})$ （系数矩阵的秩和增广矩阵的秩相等）$\Leftrightarrow$  $b$ 可由 $A$ 的列向量线性表出</li>
+<li>非齐次方程组有解 $\Leftrightarrow$ $r(A)+1=r(\overline{A})$</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<ul>
+<li>==初等变换==：设 $A$ 是 $m×n$ 矩阵<ul>
+<li>用某个非零常数 $k$（$k\not=0$）乘 $A$ 的某行（列）的每个元素  （<strong>倍乘</strong>）</li>
+<li>互换 $A$ 的某两行（列）的位置  （<strong>互换</strong>）</li>
+<li>将 $A$ 的某行（列）元素的 $k$ 倍加到另一行（列）  （<strong>倍加</strong>）</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>初等矩阵与初等变换的性质<ul>
+<li>初等矩阵的转置仍是初等矩阵</li>
+<li>初等矩阵均是可逆阵，且其逆矩阵仍是初等矩阵<ul>
+<li>$E(i,j)^{-1}=E(i,j)$，$E(i(k))^{-1}=E(i(\frac{1}{k}))$，$E(ij(k))^{-1}=E(ij(-k))$</li>
+</ul>
+</li>
+<li>用初等矩阵 $P$ 左乘（右乘）$A$，其结果 $PA(AP)$ ，相当于对 $A$ 作相应的初等行（列）变换</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>==等价矩阵==<ul>
+<li>矩阵 $A$ 经过<strong>有限次初等变换</strong>变成矩阵 $B$，则称 $A$ 与 $B$ 等价，记成 $A\cong B$</li>
+<li>若 $A \cong \left( \begin{matrix} E_r &amp; O\\ O &amp; O\end{matrix} \right)$，则后者称为 $A$ 的<strong>等价标准形</strong></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>行阶梯矩阵、行最简矩阵<ul>
+<li>==行阶梯矩阵==<ul>
+<li>如果矩阵中有零行（即这一行元素全是0），则零行在矩阵的底部</li>
+<li>每个非零元的<strong>主元</strong>（即该行最左边的第1个非零元），它们的列指标随着行指标的递增而严格增大</li>
+</ul>
+</li>
+<li>==行最简矩阵==<ul>
+<li>非零行的<strong>主元都是1</strong>，且<strong>主元所在的列</strong>的其他元素都是0，则称其为行最简矩阵</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>分块矩阵的运算<ul>
+<li>$\left| \begin{matrix} B &amp; O\\ O &amp; C\end{matrix} \right|^{-1}=\left| \begin{matrix} B^{-1} &amp; O\\ O &amp; C^{-1}\end{matrix} \right|$</li>
+<li>$\left| \begin{matrix} O &amp; B\\ C &amp; O\end{matrix} \right|^{-1}=\left| \begin{matrix} O &amp; C^{-1}\\ B^{-1} &amp; O\end{matrix} \right|$</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>行列式公式<ul>
+<li>$|kA|=k^n|A|$</li>
+<li>$\left| \begin{matrix} O &amp; A\\ B &amp; C\end{matrix} \right|=\left| \begin{matrix} D &amp; A\\ B &amp; O\end{matrix} \right|=(-1)^{mn}|A|\cdot |B|$</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>线性相关/线性无关</p>
+<ul>
+<li><p>==线性相关==</p>
+<ul>
+<li>向量组中的<strong>至少一个</strong>向量可以由其他向量线性表出</li>
+<li>对 $m$ 个 $n$ 维向量 $\alpha_1,\alpha_2,…,\alpha_m$，若<strong>存在不全为零的数</strong> $k_1,k_2,…,k_m$，使得 $k_1\alpha_1+k_2\alpha_2+…+k_m\alpha_m=0$ 成立，则称该向量组线性相关</li>
+<li>以 $\alpha_j$ 为<strong>列向量的齐次线性方程组</strong> $x_1\alpha_1+x_2\alpha_2+…+x_m\alpha_m=0$ 有<strong>非零解</strong>（$r(A)&lt;n$）</li>
+</ul>
+</li>
+<li><p>==线性无关==</p>
+<ul>
+<li>当且仅当系数 $k_1=k_2=…=k_m=0$ 时才有 $k_1\alpha_1+k_2\alpha_2+…+k_m\alpha_m=0$ </li>
+</ul>
+</li>
+<li><p>向量 $\beta$ 可由 $\alpha_1,\alpha_2,…,\alpha_m$ 线性表出</p>
+<p>$\Leftrightarrow$ 存在实数 $k_1,k_2,…,k_m$ 使 $k_1\alpha_1+k_2\alpha_2+…+k_m\alpha_m=\beta$</p>
+<p>$\Leftrightarrow$ 方程组 $[\alpha_1,\alpha_2,…,\alpha_m]\left[ \begin{matrix} x_1 \\ x_2\\ … \\ x_m\end{matrix} \right]=\beta$ 有解</p>
+<p>$\Leftrightarrow$ 秩 $r(\alpha_1,\alpha_2,…,\alpha_m)=r(\alpha_1,\alpha_2,…,\alpha_m,\beta)$</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>已知向量的坐标，判断向量组的线性相关就是转化为齐次方程组考查有无非零解</li>
+</ul>
+<ul>
+<li>==极大线性无关组==<ul>
+<li>向量组 $\alpha_{i1},\alpha_{i2},…,\alpha_{ir}$（$1\leq i_r\leq s$）是向量组 $\alpha_1,\alpha_2,…,\alpha_s$ 的<strong>部分组</strong>，满足条件<ul>
+<li>$\alpha_{i1},\alpha_{i2},…,\alpha_{ir}$ <strong>线性无关</strong></li>
+<li>在 $\alpha_{i1},\alpha_{i2},…,\alpha_{ir}$ 中加入任一向量 $\alpha_i$，则向量组 $\alpha_{i1},\alpha_{i2},…,\alpha_{ir},\alpha_i$ <strong>线性相关</strong>，则称 $\alpha_{i1},\alpha_{i2},…,\alpha_{ir}$ 是向量组 $\alpha_1,\alpha_2,…,\alpha_s$ 的极大线性无关组</li>
+<li>上一条等价于：向量组中任一向量 $\alpha_i$ 均可由 $\alpha_{i1},\alpha_{i2},…,\alpha_{ir}$ <strong>线性表出</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>==秩==</p>
+<ul>
+<li>向量组的极大线性无关组的向量个数</li>
+<li><p>矩阵 $A$ 中非零子式的最高阶数是 $r$（存在 $r$ 阶子式不等于零，$r$ 阶以上子式均等于零）</p>
+<ul>
+<li>任取 $k$ 行与 $k$ 列，位于这些行与列的交叉点上的 $k^2$ 个元素按其在原来矩阵 $A$ 中的次序可构成一个 $k$ 阶行列式，称其为矩阵 $A$ 的一个 $k$ 阶子式</li>
+</ul>
+</li>
+<li><p>性质</p>
+<ul>
+<li>$r(A^TA)=r(A)$</li>
+<li>$r(A+B)\leq r(A)+r(B)$</li>
+<li>$r(AB)\leq \min(r(A),r(B))$</li>
+<li>$\max(r(A),r(B))\leq r(A,B)\leq r(A)+r(B)$</li>
+<li>若 $A$ 是 $m×n$ 矩阵，$B$ 是 $n×s$ 矩阵，$AB=O$，则 $r(A)+r(B)\leq n$</li>
+<li>分块矩阵 $r\left( \begin{matrix} A &amp; O\\ O &amp; B\end{matrix} \right)=r(A)+r(B)$</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>正交矩阵<ul>
+<li>设 $A$ 为 $n$ 阶矩阵，若 $AA^T=A^TA=E$，则称 $A$ 为正交矩阵</li>
+<li>如 $A$ 是正交矩阵 $\Leftrightarrow$  $A^T=A^{-1}$ $\Leftrightarrow$  $A$ 的行向量（或列向量）都是单位向量且两两正交</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>线性空间的定义</p>
+</li>
+<li><p>==线性空间的同构==</p>
+<ul>
+<li><p>设 $V$ 与 $V’$ 都是域 $F$ 上的线性空间，如果存在 $V$ 到 $V’$ 的一个<strong>双射</strong> $\sigma$ ，并且 $\sigma$ 保持加<strong>法和数乘封闭</strong>，即</p>
+<script type="math/tex; mode=display">
+\sigma(\alpha+\beta)=\sigma(\alpha)+\sigma(\beta)\\
+\sigma(k\alpha)=k\sigma(\alpha)</script><p>则称 $\sigma$ 是 $V$ 到 $V’$ 的<strong>同构映射</strong>（简称为同构），此时称 $V$ 与 $V’$ 是<strong>同构的</strong>，记作 $V\cong V’$。</p>
+</li>
+<li><p>即如果两个线性空间都<strong>属于同个域</strong>，并且这两个线性空间之间<strong>存在一个同构映射</strong>，则这两个线性空间是同构的</p>
+</li>
+<li><p>性质：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/536146120">https://zhuanlan.zhihu.com/p/536146120</a></p>
+<ul>
+<li>同构映射的逆映射以及两个同构映射的乘积还是同构映射</li>
+<li>域 $F$ 上两个有限维线性空间同构的充分必要条件是它们的维数相等</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>svd（Singular Value Decomposition）</li>
+<li>紧凑奇异值分解<ul>
+<li>$A=U_r\Sigma_rV_r^H$</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://seline02.github.io">Seline</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://seline02.github.io/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">https://seline02.github.io/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://seline02.github.io" target="_blank">Seline's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">AIMA笔记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数"/></a><div class="content"><a class="title" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数">线性代数</a><time datetime="2023-05-08T07:05:38.000Z" title="发表于 2023-05-08 15:05:38">2023-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AIMA笔记"/></a><div class="content"><a class="title" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记">AIMA笔记</a><time datetime="2023-03-23T09:51:42.000Z" title="发表于 2023-03-23 17:51:42">2023-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络笔记"/></a><div class="content"><a class="title" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记">神经网络笔记</a><time datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自然语言处理笔记"/></a><div class="content"><a class="title" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记">自然语言处理笔记</a><time datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多智能体笔记"/></a><div class="content"><a class="title" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记">多智能体笔记</a><time datetime="2023-03-15T08:05:41.000Z" title="发表于 2023-03-15 16:05:41">2023-03-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
