@@ -48,7 +48,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-07-29 12:20:04'
+  postUpdate: '2023-07-29 12:27:25'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -137,80 +137,9 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Seline's blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/15/RNN-LSTM/" title="RNN, LSTM"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="RNN, LSTM"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/15/RNN-LSTM/" title="RNN, LSTM">RNN, LSTM</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-15T07:56:54.000Z" title="发表于 2022-08-15 15:56:54">2022-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="content">时间序列表示
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Seline's blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/13/pytorch%E7%AC%94%E8%AE%B0/" title="pytorch笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pytorch笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/13/pytorch%E7%AC%94%E8%AE%B0/" title="pytorch笔记">pytorch笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-13T06:17:35.000Z" title="发表于 2022-08-13 14:17:35">2022-08-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="content">张量
+创建Tensor
 
-
-
-
-
-价格用1维就能表达
-
-
-
-一行可以作为一个feature
-
-
-
-第一个维度是有几个单词
-
-
-
-one-hot的缺点：稀疏，占空间；维度高；没有语义相关性
-
-
-
-b表示batch，即一次送几个句子进去
-
-第一种表达方式：每个时间戳上有b个点
-
-
-
-
-没有初始化，nn.Embedding这张表是随机生成的，通过查表的操作来做是无法优化的
-
-
-RNN原理
-缺点：
-
-
-
-一个想法：权值共享，参数量减少
-
-
-
-要有一个持续的单元，保持语境信息
-
-
-
-
-可以只是用最后一个时刻的 $h_t$，也可以把每个时刻的 $h_t$ 聚合
-
-
-
-$h_t$ 来自于 $x_t$ 和 $h_{t-1}$
-
-激活函数是 tanh
-
-
-
-
-$E$对 $W_{hh}$ 求导等于对每个时刻的 $W_{hh}^i$ 求导之和
-
-
-
-RNN Layer使用
-
-每个句子10个单词，3个batch（3个句子），每个单词100维
-$x_t$ [3, 100]
-
-
-
-nn.RNN 第一个参数word dim，用100维表示一个单词；第二个参数：用10维来表示memory
-l0中的0表示第0层
-
-
-
-input ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/13/pytorch%E7%AC%94%E8%AE%B0/" title="pytorch笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pytorch笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/13/pytorch%E7%AC%94%E8%AE%B0/" title="pytorch笔记">pytorch笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-13T06:17:35.000Z" title="发表于 2022-08-13 14:17:35">2022-08-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="content">张量创建Tensor
 
 torch.tensor小写的接受实际的数据 大写的接受数据的维度（2，3），也可现有数据（[2,3]）（少用）
 
@@ -230,28 +159,26 @@ range在pytorch中不建议使用，用arange代替
 和arange不同，linspace/logspace中的step表示生成几个数字而不是步长
 
 
-索引与切片需要注意的是：索引出来的结果与原数据共享内存，修改一个，另一个会跟着修改。如果不想修改，可以考虑使用copy()等方法
+索引与切片
+需要注意的是：索引出来的结果与原数据共享内存，修改一个，另一个会跟着修改。如果不想修改，可以考虑使用copy()等方法
 1234import torchx = torch.rand(4,3)# 取第二列print(x[:, 1]) 
 1tensor([-0.0720,  0.0666,  1.0336, -0.6965])
-1234y = x[0,:]y ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/10/%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD/" title="变分推断"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="变分推断"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/10/%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD/" title="变分推断">变分推断</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-10T04:22:33.000Z" title="发表于 2022-08-10 12:22:33">2022-08-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="content">
+1234y = x[0, ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/10/%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD/" title="变分推断"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="变分推断"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/10/%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD/" title="变分推断">变分推断</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-10T04:22:33.000Z" title="发表于 2022-08-10 12:22:33">2022-08-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a></span></div><div class="content">
 
 
 从一个 z 的先验分布prior，用观测到的数据 x 对参数 z 有一个更新，计算出posterior distribution
 计算的方法就是用贝叶斯定理
-p(x)还可以写成 $\int_zp(x,z)dz$
+p(x)还可以写成 ∫zp(x,z)dz\int_zp(x,z)dz∫z​p(x,z)dz
 可以用后验分布的统计量（posterior means and variances）表示后验分布。但高维的贝叶斯计算比较困难
 近似推断
+
 大多数情况下posterior没有解析解。常用的计算它的方法是MCMC，但速度慢
 
-要在Q（是一个distribution family）中找一个distribution $q^*(z)$ 和target p(z|x)最近。要定义某种距离L。
-目标函数就是 $q^*(z)=argmin_{q(z)\in Q}L(q(z),p(z|x))$
+要在Q（是一个distribution family）中找一个distribution q∗(z)q^*(z)q∗(z) 和target p(z|x)最近。要定义某种距离L。
+目标函数就是 q∗(z)=argminq(z)∈QL(q(z),p(z∣x))q^*(z)=argmin_{q(z)\in Q}L(q(z),p(z|x))q∗(z)=argminq(z)∈Q​L(q(z),p(z∣x))
 最常用的度量两个distribution间的distance是KL，此时称作variational bayes
 
-$p(z|x)$ 是unknown的，KL不好直接计算，需要进行某种转化
-当 $q^*(z)=p(z|x)$时，理论上达到最优，但 $p(z|x)$ 是不知道的
-
-
-KL = -ELBO + ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/08/transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" title="transformer论文笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="transformer论文笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/08/transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" title="transformer论文笔记">transformer论文笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-08T10:09:23.000Z" title="发表于 2022-08-08 18:09:23">2022-08-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="content">
+p(z∣ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/08/transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" title="transformer论文笔记"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="transformer论文笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/08/transformer%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" title="transformer论文笔记">transformer论文笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-08T10:09:23.000Z" title="发表于 2022-08-08 18:09:23">2022-08-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></span></div><div class="content">
 训练快
 纯注意力机制
 rnn时序，难以并行
@@ -268,23 +195,26 @@ batch norm：
 二维输入，每一行是一个样本，每一列是一个特征
 整个数据扫一遍后，所有数据的均值方差存起来，预测的时候用
 预测的时候会计算全局的均值
-batch norm还会学一个 $\lambda,\beta$出来，通过学习放成任意均值、方差
-对于高维的：
-
-蓝 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/08/08/hello-world/" title="Hello World"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/08/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-08T09:54:45.020Z" title="发表于 2022-08-08 17:54:45">2022-08-08</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+batch norm还会学一个 λ,β\lambda,\betaλ,β出来，通过学习放成任意均值、方差
+对于高维的 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/08/08/hello-world/" title="Hello World"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/08/08/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-08-08T09:54:45.020Z" title="发表于 2022-08-08 17:54:45">2022-08-08</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick Start
+Create a new post
+1$ hexo new &quot;My New Post&quot;
 More info: Writing
-Run server1$ hexo server
+Run server
+1$ hexo server
 More info: Server
-Generate static files1$ hexo generate
+Generate static files
+1$ hexo generate
 More info: Generating
-Deploy to remote sites1$ hexo deploy
+Deploy to remote sites
+1$ hexo deploy
 More info: Deployment
-</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数"/></a><div class="content"><a class="title" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数">线性代数</a><time datetime="2023-05-08T07:05:38.000Z" title="发表于 2023-05-08 15:05:38">2023-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AIMA笔记"/></a><div class="content"><a class="title" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记">AIMA笔记</a><time datetime="2023-03-23T09:51:42.000Z" title="发表于 2023-03-23 17:51:42">2023-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络笔记"/></a><div class="content"><a class="title" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记">神经网络笔记</a><time datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自然语言处理笔记"/></a><div class="content"><a class="title" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记">自然语言处理笔记</a><time datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多智能体笔记"/></a><div class="content"><a class="title" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记">多智能体笔记</a><time datetime="2023-03-15T08:05:41.000Z" title="发表于 2023-03-15 16:05:41">2023-03-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数"/></a><div class="content"><a class="title" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数">线性代数</a><time datetime="2023-05-08T07:05:38.000Z" title="发表于 2023-05-08 15:05:38">2023-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AIMA笔记"/></a><div class="content"><a class="title" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记">AIMA笔记</a><time datetime="2023-03-23T09:51:42.000Z" title="发表于 2023-03-23 17:51:42">2023-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络笔记"/></a><div class="content"><a class="title" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记">神经网络笔记</a><time datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自然语言处理笔记"/></a><div class="content"><a class="title" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记">自然语言处理笔记</a><time datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多智能体笔记"/></a><div class="content"><a class="title" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记">多智能体笔记</a><time datetime="2023-03-15T08:05:41.000Z" title="发表于 2023-03-15 16:05:41">2023-03-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">强化学习</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8E%A7%E5%88%B6%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95/"><span class="card-category-list-name">控制理论与方法</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">机器学习</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">深度学习</span><span class="card-category-list-count">10</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/PPO/" style="font-size: 1.1em; color: #999">PPO</a> <a href="/tags/PyTorch/" style="font-size: 1.5em; color: #99a9bf">PyTorch</a> <a href="/tags/transformer/" style="font-size: 1.1em; color: #999">transformer</a> <a href="/tags/%E5%85%B1%E8%BD%AD%E5%85%88%E9%AA%8C/" style="font-size: 1.1em; color: #999">共轭先验</a> <a href="/tags/%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD/" style="font-size: 1.1em; color: #999">变分推断</a> <a href="/tags/%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">迁移学习</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">9</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">25</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-29T04:20:04.748Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/PPO/" style="font-size: 1.1em; color: #999">PPO</a> <a href="/tags/PyTorch/" style="font-size: 1.5em; color: #99a9bf">PyTorch</a> <a href="/tags/transformer/" style="font-size: 1.1em; color: #999">transformer</a> <a href="/tags/%E5%85%B1%E8%BD%AD%E5%85%88%E9%AA%8C/" style="font-size: 1.1em; color: #999">共轭先验</a> <a href="/tags/%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD/" style="font-size: 1.1em; color: #999">变分推断</a> <a href="/tags/%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0/" style="font-size: 1.1em; color: #999">迁移学习</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">十月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">9</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">24</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-29T04:27:24.549Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

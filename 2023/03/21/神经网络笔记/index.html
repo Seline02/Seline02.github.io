@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>神经网络笔记 | Seline's blog</title><meta name="author" content="Seline"><meta name="copyright" content="Seline"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第二讲 神经元01 神经元模型 生物神经元信号传递过程：其他神经元信号（输入信号）通过树突传递到细胞体，细胞体把从其他多个神经元传递进来的输入信号进行合并加工，然后再通过轴突前端的突触将输出信号传递给别的神经元 MP神经元 多输入单输出 分兴奋性输入、抑制性输入 空间整合特性、阈值特性 输入输出间有时延，取决于突触间传播的延迟 忽略时间整合作用和不应期（不能连续激发） 二值网络（0&#x2F;1） 权为正：">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>神经网络笔记 | Seline's blog</title><meta name="author" content="Seline"><meta name="copyright" content="Seline"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第二讲 神经元 01 神经元模型  生物神经元信号传递过程：其他神经元信号（输入信号）通过树突传递到细胞体，细胞体把从其他多个神经元传递进来的输入信号进行合并加工，然后再通过轴突前端的突触将输出信号传递给别的神经元 MP神经元  多输入单输出 分兴奋性输入、抑制性输入 空间整合特性、阈值特性 输入输出间有时延，取决于突触间传播的延迟 忽略时间整合作用和不应期（不能连续激发） 二值网络（0&#x2F;1） 权">
 <meta property="og:type" content="article">
 <meta property="og:title" content="神经网络笔记">
 <meta property="og:url" content="https://seline02.github.io/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Seline&#39;s blog">
-<meta property="og:description" content="第二讲 神经元01 神经元模型 生物神经元信号传递过程：其他神经元信号（输入信号）通过树突传递到细胞体，细胞体把从其他多个神经元传递进来的输入信号进行合并加工，然后再通过轴突前端的突触将输出信号传递给别的神经元 MP神经元 多输入单输出 分兴奋性输入、抑制性输入 空间整合特性、阈值特性 输入输出间有时延，取决于突触间传播的延迟 忽略时间整合作用和不应期（不能连续激发） 二值网络（0&#x2F;1） 权为正：">
+<meta property="og:description" content="第二讲 神经元 01 神经元模型  生物神经元信号传递过程：其他神经元信号（输入信号）通过树突传递到细胞体，细胞体把从其他多个神经元传递进来的输入信号进行合并加工，然后再通过轴突前端的突触将输出信号传递给别的神经元 MP神经元  多输入单输出 分兴奋性输入、抑制性输入 空间整合特性、阈值特性 输入输出间有时延，取决于突触间传播的延迟 忽略时间整合作用和不应期（不能连续激发） 二值网络（0&#x2F;1） 权">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
 <meta property="article:published_time" content="2023-03-21T04:32:51.000Z">
@@ -141,9 +141,12 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">神经网络笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-09T16:50:48.671Z" title="更新于 2023-07-10 00:50:48">2023-07-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="神经网络笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第二讲-神经元"><a href="#第二讲-神经元" class="headerlink" title="第二讲 神经元"></a>第二讲 神经元</h1><h2 id="01-神经元模型"><a href="#01-神经元模型" class="headerlink" title="01 神经元模型"></a>01 神经元模型</h2><ul>
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">神经网络笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-09T16:50:48.671Z" title="更新于 2023-07-10 00:50:48">2023-07-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="神经网络笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第二讲-神经元">第二讲 神经元</h1>
+<h2 id="01-神经元模型">01 神经元模型</h2>
+<ul>
 <li>生物神经元信号传递过程：其他神经元信号（输入信号）通过<strong>树突</strong>传递到<strong>细胞体</strong>，细胞体把从其他多个神经元传递进来的输入信号进行<strong>合并加工</strong>，然后再通过<strong>轴突前端的突触</strong>将输出信号传递给别的神经元</li>
-<li>MP神经元<ul>
+<li>MP神经元
+<ul>
 <li>多输入单输出</li>
 <li>分兴奋性输入、抑制性输入</li>
 <li>空间整合特性、阈值特性</li>
@@ -157,17 +160,25 @@
 </ul>
 </li>
 </ul>
-<h3 id="02-神经元的组成成分"><a href="#02-神经元的组成成分" class="headerlink" title="02 神经元的组成成分"></a>02 神经元的组成成分</h3><ul>
-<li>阈值函数</li>
-<li>Sigmoid函数：输入（-∞,+∞）映射到（0,1）<ul>
+<h3 id="02-神经元的组成成分">02 神经元的组成成分</h3>
+<ul>
+<li>
+<p>阈值函数</p>
+</li>
+<li>
+<p>Sigmoid函数：输入（-∞,+∞）映射到（0,1）</p>
+<ul>
 <li>非线性压缩函数</li>
-<li>$sigmoid(x)=\frac{1}{1+e^{-x}}$</li>
-<li>缺点：<ul>
-<li>非中心化。<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>i</mi><mi>g</mi><mi>m</mi><mi>o</mi><mi>i</mi><mi>d</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">sigmoid(x)=\frac{1}{1+e^{-x}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">m</span><span class="mord mathdefault">o</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2484389999999999em;vertical-align:-0.403331em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathdefault mtight">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+<li>缺点：
+<ul>
+<li>非中心化。
+<ul>
 <li>输出都为正，导致zigzag式更新梯度。相当于把上游梯度的符号传回来，这意味着所有关于w的梯度全为正值或者全为负值，那么它们就会总是朝着同一个方向移动。<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38646522/article/details/79534677">https://blog.csdn.net/weixin_38646522/article/details/79534677</a></li>
 </ul>
 </li>
-<li>反向传播时，很容易就会出现梯度消失的情况<ul>
+<li>反向传播时，很容易就会出现梯度消失的情况
+<ul>
 <li>解决：ReLU，batch normalization（每个channel上所有实例所有feature的均值，只保留了channel维度）</li>
 </ul>
 </li>
@@ -176,97 +187,133 @@
 </li>
 </ul>
 </li>
-<li>Tanh函数<ul>
-<li>$tanh(x)=\frac{2}{1+e^{-2x}}-1$</li>
+<li>
+<p>Tanh函数</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>n</mi><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>2</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn><mi>x</mi></mrow></msup></mrow></mfrac><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">tanh(x)=\frac{2}{1+e^{-2x}}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2484389999999999em;vertical-align:-0.403331em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathdefault mtight">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463142857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
 <li>原点上对称，均值为0</li>
 <li>和sigmoid一样，网络层数过多会导致梯度消失</li>
 </ul>
 </li>
-<li>ReLU函数<ul>
+<li>
+<p>ReLU函数</p>
+<ul>
 <li>缓解梯度消失，收敛速度快</li>
 <li>存在神经元坏死现象，负半轴中会出现梯度不能更新</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>乘法神经元</p>
 <ul>
-<li>乘法神经元<ul>
-<li>累乘替代MP中累加，$u=\prod_{i=1}^n (w_ix_i+b_i)$，$y=g(u)=\frac{1}{1+e^{-u}}$</li>
+<li>累乘替代MP中累加，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><msubsup><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo stretchy="false">(</mo><msub><mi>w</mi><mi>i</mi></msub><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><msub><mi>b</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">u=\prod_{i=1}^n (w_ix_i+b_i)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">u</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.104002em;vertical-align:-0.29971000000000003em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∏</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi><mo>=</mo><mi>g</mi><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>u</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">y=g(u)=\frac{1}{1+e^{-u}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2484389999999999em;vertical-align:-0.403331em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathdefault mtight">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathdefault mtight">u</span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.403331em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
 <li>很好拟合多项式分布的输入，在时间序列预测上效果较好</li>
 </ul>
 </li>
 </ul>
-<h3 id="03-感知机神经元"><a href="#03-感知机神经元" class="headerlink" title="03 感知机神经元"></a>03 感知机神经元</h3><ul>
-<li>MP神经元局限：权值事先给定，不能自动确定权值，没有学习</li>
-<li>感知机神经元：在MP基础上提出学习的概念，设定训练样本和期望输出，通过学习调整权值</li>
-</ul>
+<h3 id="03-感知机神经元">03 感知机神经元</h3>
 <ul>
-<li><p><img src="image-20230321140050253.png" alt="image-20230321140050253" style="zoom:50%;"></p>
+<li>
+<p>MP神经元局限：权值事先给定，不能自动确定权值，没有学习</p>
 </li>
-<li><p>感知机学习算法</p>
+<li>
+<p>感知机神经元：在MP基础上提出学习的概念，设定训练样本和期望输出，通过学习调整权值</p>
+</li>
+<li>
+<img src="image-20230321140050253.png" alt="image-20230321140050253" style="zoom:50%;">
+</li>
+<li>
+<p>感知机学习算法</p>
 <ul>
-<li><p>随机学习<img src="image-20230321140718958.png" alt="image-20230321140718958" style="zoom:50%;"></p>
+<li>
+<p>随机学习<img src="image-20230321140718958.png" alt="image-20230321140718958" style="zoom:50%;"></p>
 <ul>
 <li>效率低，但简单，实现容易，能找到全局最优解</li>
 </ul>
 </li>
-<li><p>Hebb学习</p>
+<li>
+<p>Hebb学习</p>
 <ul>
-<li>“突出修正”假设/Hebb学习规则：神经元突触前膜电位与后膜电位同时为正（同时处于兴奋），突触传导增强（连接强度应增强）</li>
-<li><p><img src="image-20230321141417036.png" alt="image-20230321141417036" style="zoom:50%;"></p>
+<li>
+<p>“突出修正”假设/Hebb学习规则：神经元突触前膜电位与后膜电位同时为正（同时处于兴奋），突触传导增强（连接强度应增强）</p>
 </li>
-<li><p>Hebb学习可用来无监督学习。</p>
+<li>
+<img src="image-20230321141417036.png" alt="image-20230321141417036" style="zoom:50%;">
 </li>
-<li>有监督学习学决策边界，无监督学习学样本的分布，学出来的是代表点</li>
+<li>
+<p>Hebb学习可用来无监督学习。</p>
+</li>
+<li>
+<p>有监督学习学决策边界，无监督学习学样本的分布，学出来的是代表点</p>
+</li>
 </ul>
 </li>
-<li><p>基于误差的学习</p>
+<li>
+<p>基于误差的学习</p>
 <ul>
-<li><img src="image-20230321142233085.png" alt="image-20230321142233085" style="zoom:50%;"></li>
-</ul>
+<li>
+<img src="image-20230321142233085.png" alt="image-20230321142233085" style="zoom:50%;">
 </li>
 </ul>
 </li>
-<li><p>人工神经元就是一个具有记忆功能的输入权值化的“多输入-单输出”“整合-激发”装置</p>
+</ul>
+</li>
+<li>
+<p>人工神经元就是一个具有记忆功能的输入权值化的“多输入-单输出”“整合-激发”装置</p>
 </li>
 </ul>
-<h3 id="04-神经元的应用"><a href="#04-神经元的应用" class="headerlink" title="04 神经元的应用"></a>04 神经元的应用</h3><ul>
-<li><p>线性回归</p>
+<h3 id="04-神经元的应用">04 神经元的应用</h3>
+<ul>
+<li>
+<p>线性回归</p>
 <ul>
 <li>最小二乘法：从损失函数求导，直接求得数学解析解</li>
 <li>神经元方法：用导数传递误差，再通过迭代方法（用近似解）逼近真实解</li>
 </ul>
 </li>
-<li><p>单输入-单输出神经元应用</p>
+<li>
+<p>单输入-单输出神经元应用</p>
 </li>
-<li><p>多输入-单输出神经元应用</p>
+<li>
+<p>多输入-单输出神经元应用</p>
 </li>
-<li><p>单个神经元的局限：线性不可分情形</p>
+<li>
+<p>单个神经元的局限：线性不可分情形</p>
 </li>
 </ul>
-<p><img src="image-20230510164827131.png" alt="image-20230510164827131" style="zoom:50%;"></p>
-<h1 id="第五讲-神经网络模型优化"><a href="#第五讲-神经网络模型优化" class="headerlink" title="第五讲 神经网络模型优化"></a>第五讲 神经网络模型优化</h1><h2 id="01-学习率"><a href="#01-学习率" class="headerlink" title="01 学习率"></a>01 学习率</h2><ul>
-<li>学习率调整方法<ul>
-<li><strong>学习率衰减</strong>：一开始设置大一些保证收敛速度，当收敛到最优点附近，应该让学习率变小一些，避免震荡<ul>
+<img src="image-20230510164827131.png" alt="image-20230510164827131" style="zoom:50%;">
+<h1 id="第五讲-神经网络模型优化">第五讲 神经网络模型优化</h1>
+<h2 id="01-学习率">01 学习率</h2>
+<ul>
+<li>学习率调整方法
+<ul>
+<li><strong>学习率衰减</strong>：一开始设置大一些保证收敛速度，当收敛到最优点附近，应该让学习率变小一些，避免震荡
+<ul>
 <li>分段常数衰减、逆时衰减、指数衰减、自然指数衰减、余弦衰减</li>
 </ul>
 </li>
-<li><strong>学习率预热</strong><ul>
+<li><strong>学习率预热</strong>
+<ul>
 <li>原因：刚开始训练时，<strong>模型的权重是随机初始化的</strong>，此时若选择一个较大的学习率，可能带来模型的<strong>不稳定</strong>（震荡），为了让<strong>初始阶段的学习更加稳定</strong>，使用学习率预热</li>
-<li>基本思路<ul>
+<li>基本思路
+<ul>
 <li>在初始的几轮，采用较小的学习率</li>
 <li>梯度下降到一定程度之后，再恢复到初始设置的学习率</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>周期变化</strong><ul>
+<li><strong>周期变化</strong>
+<ul>
 <li>原因：梯度下降方法容易陷入局部最小值或鞍点，这个时候根据经验应当适当增加学习率来逃离。虽然有可能损失网络收敛稳定性，但长远来看能找到更好的局部最优解</li>
-<li>周期性学习率调整<ul>
-<li>循环学习率（CLR）<ul>
+<li>周期性学习率调整
+<ul>
+<li>循环学习率（CLR）
+<ul>
 <li>让学习率在一个区间内周期性的增大和缩小</li>
 </ul>
 </li>
-<li>带热重启的随机梯度下降（SGDR）<ul>
+<li>带热重启的随机梯度下降（SGDR）
+<ul>
 <li>学习率会每间隔一定迭代后重新初始化为预先设定好的值，并继续衰减</li>
 </ul>
 </li>
@@ -274,8 +321,10 @@
 </li>
 </ul>
 </li>
-<li><strong>自适应学习率调整</strong><ul>
-<li>AdaGrad<ul>
+<li><strong>自适应学习率调整</strong>
+<ul>
+<li>AdaGrad
+<ul>
 <li>在训练过程中动态调整学习率，对<strong>不同参数</strong>根据<strong>累计梯度平方和</strong>更新不同学习率</li>
 <li>梯度一直<strong>变化较大</strong>的参数，学习率下降也较快，即高频特征使用较小学习率</li>
 <li>梯度一直变化较小的参数，学习率下降也较慢，即低频特征使用较大学习率</li>
@@ -283,11 +332,13 @@
 <li>缺点：学习率不断衰减，在迭代早期衰减过快可能直接导致后期收敛动力不足</li>
 </ul>
 </li>
-<li>RMSProp<ul>
-<li>添加衰减因子 $\rho$，在学习率更新过程中<strong>权衡过去与当前的梯度信息</strong>，减轻了因<strong>梯度不断累计</strong>导致<strong>学习率大幅降低</strong>的影响，防止学习过早结束。$r\leftarrow \rho r+(1-\rho)g\odot g$</li>
+<li>RMSProp
+<ul>
+<li>添加衰减因子 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi></mrow><annotation encoding="application/x-tex">\rho</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">ρ</span></span></span></span>，在学习率更新过程中<strong>权衡过去与当前的梯度信息</strong>，减轻了因<strong>梯度不断累计</strong>导致<strong>学习率大幅降低</strong>的影响，防止学习过早结束。<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>←</mo><mi>ρ</mi><mi>r</mi><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>ρ</mi><mo stretchy="false">)</mo><mi>g</mi><mo>⊙</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">r\leftarrow \rho r+(1-\rho)g\odot g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">←</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">ρ</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">ρ</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊙</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span></span></span></span></li>
 </ul>
 </li>
-<li>Adam算法<ul>
+<li>Adam算法
+<ul>
 <li>融合了动量法和RMSProp算法的思想，不但使用<strong>动量</strong>作为<strong>参数更新方向</strong>，而且可以<strong>自适应调整学习率</strong></li>
 <li>加入了修正，避免冷启动问题</li>
 </ul>
@@ -297,54 +348,74 @@
 </ul>
 </li>
 </ul>
-<h3 id="深度学习中的优化器"><a href="#深度学习中的优化器" class="headerlink" title="深度学习中的优化器"></a>深度学习中的优化器</h3><ul>
-<li><p>梯度的方向 是函数在给定点上升最快的方向</p>
+<h3 id="深度学习中的优化器">深度学习中的优化器</h3>
+<ul>
+<li>
+<p>梯度的方向 是函数在给定点上升最快的方向</p>
 </li>
-<li><p>SGD</p>
+<li>
+<p>SGD</p>
 </li>
-<li><p>SGD+Momentum</p>
+<li>
+<p>SGD+Momentum</p>
 <ul>
 <li>考虑之前的惯性</li>
 <li>梯度累加的过程中，震荡的方向的梯度互相抵消，梯度小的方向逐渐累加</li>
 </ul>
 </li>
-<li><p>AdaGrad</p>
+<li>
+<p>AdaGrad</p>
 <ul>
-<li><p><img src="image-20230604115114840.png" alt="image-20230604115114840" style="zoom:50%;"></p>
+<li>
+<img src="image-20230604115114840.png" alt="image-20230604115114840" style="zoom:50%;">
 </li>
-<li><p>调节的是学习率，前面几种调节的是梯度</p>
+<li>
+<p>调节的是学习率，前面几种调节的是梯度</p>
 </li>
 </ul>
 </li>
-<li><p>RMSProp</p>
+<li>
+<p>RMSProp</p>
 <ul>
-<li><p>AdaGrad的累积平方梯度是一直在累加的，即前面走的路都记得</p>
+<li>
+<p>AdaGrad的累积平方梯度是一直在累加的，即前面走的路都记得</p>
 </li>
-<li><p><img src="image-20230604115601598.png" alt="image-20230604115601598" style="zoom:50%;"></p>
+<li>
+<img src="image-20230604115601598.png" alt="image-20230604115601598" style="zoom:50%;">
 </li>
 </ul>
 </li>
-<li><p>Adam</p>
+<li>
+<p>Adam</p>
 <ul>
-<li><img src="image-20230604115740900.png" alt="image-20230604115740900" style="zoom:50%;"></li>
+<li>
+<img src="image-20230604115740900.png" alt="image-20230604115740900" style="zoom:50%;">
+</li>
 </ul>
 </li>
 </ul>
 <p>​                  <img src="image-20230604115923090.png" alt="image-20230604115923090" style="zoom:50%;"></p>
-<h2 id="02-损失函数"><a href="#02-损失函数" class="headerlink" title="02 损失函数"></a>02 损失函数</h2><h3 id="2-1-回归损失函数"><a href="#2-1-回归损失函数" class="headerlink" title="2.1 回归损失函数"></a>2.1 回归损失函数</h3><ul>
-<li>平方误差损失与绝对值误差损失<ul>
-<li><strong>MAE 对于异常点更加鲁棒</strong><ul>
+<h2 id="02-损失函数">02 损失函数</h2>
+<h3 id="2-1-回归损失函数">2.1 回归损失函数</h3>
+<ul>
+<li>平方误差损失与绝对值误差损失
+<ul>
+<li><strong>MAE 对于异常点更加鲁棒</strong>
+<ul>
 <li>在有异常点的情况下，平方误差会扩大误差，因此平方误差损失函数对异常点更敏感</li>
 </ul>
 </li>
-<li><strong>MSE 通常比 MAE 可以更快地收敛</strong><ul>
+<li><strong>MSE 通常比 MAE 可以更快地收敛</strong>
+<ul>
 <li>绝对值误差损失函数更新梯度始终一样，不利于模型收敛</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Huber 损失<ul>
-<li>结合了平方误差损失和绝对值误差损失优点<ul>
+<li>Huber 损失
+<ul>
+<li>结合了平方误差损失和绝对值误差损失优点
+<ul>
 <li>误差较小时：平方误差损失</li>
 <li>误差较大时：绝对值误差损失</li>
 </ul>
@@ -353,41 +424,52 @@
 </ul>
 </li>
 </ul>
-<h3 id="2-2-分类损失函数"><a href="#2-2-分类损失函数" class="headerlink" title="2.2 分类损失函数"></a>2.2 分类损失函数</h3><ul>
+<h3 id="2-2-分类损失函数">2.2 分类损失函数</h3>
+<ul>
 <li>分类错误率</li>
-<li>均方误差<ul>
-<li>梯度受 $\sigma’(z)$ 控制，可能很小</li>
+<li>均方误差
+<ul>
+<li>梯度受 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sigma&#x27;(z)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose">)</span></span></span></span> 控制，可能很小</li>
 </ul>
 </li>
-<li>交叉熵损失<ul>
-<li>权重学习的速度受到 $\sigma(z)-y$，也就是输出值和目标值的误差的控制。更大的误差带来更快的学习速度，避免了均方误差“学习缓慢”的问题</li>
+<li>交叉熵损失
+<ul>
+<li>权重学习的速度受到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo><mo>−</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">\sigma(z)-y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">σ</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>，也就是输出值和目标值的误差的控制。更大的误差带来更快的学习速度，避免了均方误差“学习缓慢”的问题</li>
 </ul>
 </li>
 </ul>
-<h2 id="03-正则化"><a href="#03-正则化" class="headerlink" title="03 正则化"></a>03 正则化</h2><ul>
-<li><p>L1和L2正则化</p>
+<h2 id="03-正则化">03 正则化</h2>
+<ul>
+<li>
+<p>L1和L2正则化</p>
 <ul>
 <li>L1正则化使参数趋近坐标系（零值）</li>
 <li>L2正则化使参数减小</li>
-<li>L1正则每次梯度更新时，梯度为1或-1，导致L1稳定向0靠近；L2正则随着变量靠近0，其梯度逐渐减小<ul>
+<li>L1正则每次梯度更新时，梯度为1或-1，导致L1稳定向0靠近；L2正则随着变量靠近0，其梯度逐渐减小
+<ul>
 <li>L1正则可能为0，L2正则却几乎不可能</li>
 <li>所以带L1正则项训练的模型更容易得到<strong>稀疏解</strong></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Dropout</p>
+<li>
+<p>Dropout</p>
 <ul>
-<li><p>在训练时，以概率 $p$ 随机丢弃部分神经元</p>
+<li>
+<p>在训练时，以概率 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span> 随机丢弃部分神经元</p>
 <ul>
-<li><p><img src="image-20230604133346857.png" alt="image-20230604133346857" style="zoom:40%;"></p>
+<li>
+<img src="image-20230604133346857.png" alt="image-20230604133346857" style="zoom:40%;">
 </li>
-<li><p><img src="image-20230604133545652.png" alt="image-20230604133545652" style="zoom:50%;"></p>
+<li>
+<img src="image-20230604133545652.png" alt="image-20230604133545652" style="zoom:50%;">
 <p>也可以在训练的时候除以p，测试的时候就不用乘p了</p>
 </li>
 </ul>
 </li>
-<li><p>避免过拟合原因</p>
+<li>
+<p>避免过拟合原因</p>
 <ul>
 <li>相当于<strong>取平均</strong>的作用，取每次丢弃后子网络的平均结果</li>
 <li>降低神经元之间的敏感度，增加整体鲁棒性</li>
@@ -395,40 +477,57 @@
 </li>
 </ul>
 </li>
-<li><p>提前停止</p>
+<li>
+<p>提前停止</p>
 <ul>
 <li>验证集错误率基本不下降时或有反增趋势时，可以提前停止训练</li>
 </ul>
 </li>
 </ul>
-<h2 id="04-归一化"><a href="#04-归一化" class="headerlink" title="04 归一化"></a>04 归一化</h2><ul>
-<li><p>数据归一化</p>
+<h2 id="04-归一化">04 归一化</h2>
+<ul>
+<li>
+<p>数据归一化</p>
 <ul>
 <li>min-max归一化：将结果映射到 [0,1] 之间</li>
-<li>Z-score归一化（标准归一化)：$\hat{x}=\frac{x-\mu}{\sigma}$</li>
+<li>Z-score归一化（标准归一化)：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>=</mo><mfrac><mrow><mi>x</mi><mo>−</mo><mi>μ</mi></mrow><mi>σ</mi></mfrac></mrow><annotation encoding="application/x-tex">\hat{x}=\frac{x-\mu}{\sigma}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">x</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;"><span class="mord">^</span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.199439em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.854439em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">σ</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.446108em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">x</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight">μ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
 </ul>
 </li>
-<li><p>归一化</p>
+<li>
+<p>归一化</p>
 <ul>
 <li>如果前面发生了一个小偏移，到了越深的层这个偏移就会被扩大。这样是不利于网络的训练</li>
 <li>后面介绍的归一化方法主要为了<strong>稳定层输入的分布</strong>，来改善神经网络训练</li>
 </ul>
 </li>
-<li><p>常见归一化方法</p>
+<li>
+<p>常见归一化方法</p>
 <ul>
-<li><p>批归一化（Batch Normalization，BN）</p>
+<li>
+<p>批归一化（Batch Normalization，BN）</p>
 <ul>
-<li>靠近输出层收敛快，但靠近输入层收敛慢。每一层分布弄成一样，可以提高收敛速度</li>
-<li>缺点：使用小的batch size时不稳定。因为当batch值很小时，计算的均值和方差不稳定</li>
-<li><img src="image-20230604144445448.png" alt="image-20230604144445448" style="zoom:33%;"></li>
-<li><img src="image-20230604144709468.png" alt="image-20230604144709468" style="zoom:33%;"></li>
-<li><p><img src="image-20230604145259844.png" alt="image-20230604145259844" style="zoom:33%;"></p>
+<li>
+<p>靠近输出层收敛快，但靠近输入层收敛慢。每一层分布弄成一样，可以提高收敛速度</p>
 </li>
-<li><p><img src="image-20230604145455662.png" alt="image-20230604145455662" style="zoom:33%;"></p>
+<li>
+<p>缺点：使用小的batch size时不稳定。因为当batch值很小时，计算的均值和方差不稳定</p>
+</li>
+<li>
+<img src="image-20230604144445448.png" alt="image-20230604144445448" style="zoom:33%;">
+</li>
+<li>
+<img src="image-20230604144709468.png" alt="image-20230604144709468" style="zoom:33%;">
+</li>
+<li>
+<img src="image-20230604145259844.png" alt="image-20230604145259844" style="zoom:33%;">
+</li>
+<li>
+<img src="image-20230604145455662.png" alt="image-20230604145455662" style="zoom:33%;">
 </li>
 </ul>
 </li>
-<li><p>层归一化（LN）</p>
+<li>
+<p>层归一化（LN）</p>
 <ul>
 <li>思路：对中间层的所有神经元进行归一化</li>
 </ul>
@@ -436,14 +535,15 @@
 </ul>
 </li>
 </ul>
-<p><img src="image-20230604152702582.png" alt="image-20230604152702582" style="zoom:50%;"></p>
+<img src="image-20230604152702582.png" alt="image-20230604152702582" style="zoom:50%;">
 <ul>
 <li>Batch Norm 是对三个通道分别进行归一化</li>
 <li>Layer Norm 是对4张图片分别进行归一化</li>
 <li>Instance Norm 是每张图片的每个通道层分别进行归一化</li>
 <li>Group Norm 对几个通道分个组，每个组进行归一化</li>
 <li>BatchNorm是在样本维度进行归一化(一个批次内不同样本的相同特征计算均值和方差)，而LayerNorm是在特征维度进行归一化(同一个样本的不同特征计算均值和方差)。</li>
-<li>优点<ul>
+<li>优点
+<ul>
 <li>提高精度</li>
 <li>加快训练速度</li>
 <li>防止梯度消失（sigmoid）</li>
@@ -451,35 +551,44 @@
 </ul>
 </li>
 </ul>
-<h2 id="05-参数初始化"><a href="#05-参数初始化" class="headerlink" title="05 参数初始化"></a>05 参数初始化</h2><ul>
-<li>全0初始化<ul>
+<h2 id="05-参数初始化">05 参数初始化</h2>
+<ul>
+<li>全0初始化
+<ul>
 <li>初始化需要避免“对称权重”现象（回传梯度相等）</li>
 </ul>
 </li>
-<li>权重矩阵初始化<ul>
-<li>基于<strong>固定方差</strong>的参数初始化<ul>
+<li>权重矩阵初始化
+<ul>
+<li>基于<strong>固定方差</strong>的参数初始化
+<ul>
 <li>主要思想：从一个固定均值（通常为0）和方差的分布中采样来生成参数的初始值</li>
-<li>方法一：对于任意网络权值 $w_{ij}$，从区间 [-r, r] 的<strong>均匀分布</strong>中随机选取初始值</li>
-<li>方法二：对于任意网络权值 $w_{ij}$，从均值为0、方差为常数k的<strong>高斯分布</strong>中随机选取初始值</li>
+<li>方法一：对于任意网络权值 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">w_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，从区间 [-r, r] 的<strong>均匀分布</strong>中随机选取初始值</li>
+<li>方法二：对于任意网络权值 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">w_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>，从均值为0、方差为常数k的<strong>高斯分布</strong>中随机选取初始值</li>
 <li>缺点：当神经网络的层数增多时，会发现越往后面层的激活函数的输出值几乎都接近于0，极易出现梯度消失（方差大，离散程度大）</li>
 </ul>
 </li>
-<li>基于<strong>方差缩放</strong>的参数初始化<ul>
+<li>基于<strong>方差缩放</strong>的参数初始化
+<ul>
 <li>主要思想：为了<strong>缓解梯度消失或爆炸问题</strong>，我们尽可能保持<strong>每个神经元的输入和输出的方差一致</strong>，根据神经元的连接数量来自适应地调整初始化分布的方差</li>
-<li>Xavier 初始化<ul>
-<li>为了使得在经过多层网络后，信号不被过分放大或过分减弱，尽可能保持每个神经元的<strong>输入和输出的方差一致</strong>。作为折中，同时考虑信号在前向和反向传播中都不被放大或缩小，可以设置为：$var(w_i^{(l)})=\frac{2}{M_{l-1}+M_l}$</li>
+<li>Xavier 初始化
+<ul>
+<li>为了使得在经过多层网络后，信号不被过分放大或过分减弱，尽可能保持每个神经元的<strong>输入和输出的方差一致</strong>。作为折中，同时考虑信号在前向和反向传播中都不被放大或缩小，可以设置为：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mi>a</mi><mi>r</mi><mo stretchy="false">(</mo><msubsup><mi>w</mi><mi>i</mi><mrow><mo stretchy="false">(</mo><mi>l</mi><mo stretchy="false">)</mo></mrow></msubsup><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>2</mn><mrow><msub><mi>M</mi><mrow><mi>l</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><msub><mi>M</mi><mi>l</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">var(w_i^{(l)})=\frac{2}{M_{l-1}+M_l}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.321664em;vertical-align:-0.27686399999999994em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0448em;"><span style="top:-2.4231360000000004em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span><span style="top:-3.2198em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.27686399999999994em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.3376329999999998em;vertical-align:-0.4925249999999999em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.34480000000000005em;"><span style="top:-2.3487714285714287em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.21074999999999994em;"><span></span></span></span></span></span></span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.01968em;">l</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4925249999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
 <li>优点：激活函数用 tanh（双曲正切函数），每层输出值分布服从高斯分布</li>
 <li>缺点：Xavier 初始化对 ReLU 激活函数的效果不佳，多层后逐渐趋向于0</li>
 </ul>
 </li>
-<li>He 初始化<ul>
-<li>当第 $l$ 层神经元使用 ReLU 激活函数时，通常有一半的神经元输出为0，因此其分布的方差也近似为使用恒等函数时的一半。</li>
+<li>He 初始化
+<ul>
+<li>当第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span> 层神经元使用 ReLU 激活函数时，通常有一半的神经元输出为0，因此其分布的方差也近似为使用恒等函数时的一半。</li>
 </ul>
 </li>
-<li>正交初始化<ul>
+<li>正交初始化
+<ul>
 <li>主要思想：正交初始化可以避免训练开始时就出现梯度消失或梯度爆炸现象</li>
-<li>启发式规则：初始化权重矩阵为正交矩阵，满足 $W^TW=I$</li>
-<li>步骤：<ul>
+<li>启发式规则：初始化权重矩阵为正交矩阵，满足 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>W</mi><mi>T</mi></msup><mi>W</mi><mo>=</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">W^TW=I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8413309999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span></span></li>
+<li>步骤：
+<ul>
 <li>用均值为0方差为1的高斯分布初始化一个矩阵</li>
 <li>将这个矩阵用奇异值分解得到两个正交矩阵，使用其中之一作为权重矩阵</li>
 </ul>
@@ -492,27 +601,36 @@
 </ul>
 </li>
 </ul>
-<h2 id="06-网络预训练"><a href="#06-网络预训练" class="headerlink" title="06 网络预训练"></a>06 网络预训练</h2><ul>
-<li>网络预训练是采用相同结构的，并且已经训练好的网络权值作为初始值，在当前任务上再次进行训练</li>
-<li><p>为什么使用网络预训练</p>
+<h2 id="06-网络预训练">06 网络预训练</h2>
+<ul>
+<li>
+<p>网络预训练是采用相同结构的，并且已经训练好的网络权值作为初始值，在当前任务上再次进行训练</p>
+</li>
+<li>
+<p>为什么使用网络预训练</p>
 <ul>
 <li>为了能够在<strong>更短时间内</strong>训练得到更好的网络性能</li>
 <li>相似的任务之间，训练好的神经网络可以复用，通常作为特征提取器</li>
 </ul>
 </li>
-<li><p>常用的预训练方法</p>
+<li>
+<p>常用的预训练方法</p>
 <ul>
-<li>无监督预训练<ul>
-<li>玻尔兹曼机<ul>
+<li>无监督预训练
+<ul>
+<li>玻尔兹曼机
+<ul>
 <li>RBM是生成式神经网络，训练目标是最小化RBM模拟的数据分布与数据实际分布之间的对比散度</li>
-<li>逐层预训练方法：将多个预训练好的RBM堆叠起来就可以作为网络的初始化结果<ul>
+<li>逐层预训练方法：将多个预训练好的RBM堆叠起来就可以作为网络的初始化结果
+<ul>
 <li>堆叠方式：将训练好的上一层输出作为下一层的输入</li>
 </ul>
 </li>
 <li>由多层受限制玻尔兹曼机堆叠起来的网络叫做<strong>深度信念网络</strong>（DBN）</li>
 </ul>
 </li>
-<li>自编码器（AE）<ul>
+<li>自编码器（AE）
+<ul>
 <li><strong>无监督</strong>的全连接网络结构，其训练目标为<strong>重构误差最小化</strong></li>
 <li>编码器：高维数据转换成为低维特征编码</li>
 <li>解码器：还原原始数据</li>
@@ -521,10 +639,12 @@
 </li>
 </ul>
 </li>
-<li>有监督预训练<ul>
+<li>有监督预训练
+<ul>
 <li>迁移学习：已经训练好的网络作为自己网络的权重初始值</li>
 <li>即使网络顶层的分类器最终需要重新训练，中间网络层作为特征提取器，可以直接利用</li>
-<li>使用预训练模型的方式<ul>
+<li>使用预训练模型的方式
+<ul>
 <li>直接作为特征提取网络</li>
 <li>作为初始化模型进行微调</li>
 </ul>
@@ -534,7 +654,7 @@
 </ul>
 </li>
 </ul>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://seline02.github.io">Seline</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://seline02.github.io/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/">https://seline02.github.io/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://seline02.github.io" target="_blank">Seline's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">AIMA笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">自然语言处理笔记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="toc-number">1.</span> <span class="toc-text">第二讲 神经元</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E7%A5%9E%E7%BB%8F%E5%85%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">01 神经元模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#02-%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E7%BB%84%E6%88%90%E6%88%90%E5%88%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">02 神经元的组成成分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03-%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="toc-number">1.1.2.</span> <span class="toc-text">03 感知机神经元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04-%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">04 神经元的应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E8%AE%B2-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">第五讲 神经网络模型优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E5%AD%A6%E4%B9%A0%E7%8E%87"><span class="toc-number">2.1.</span> <span class="toc-text">01 学习率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">2.1.1.</span> <span class="toc-text">深度学习中的优化器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">02 损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%9B%9E%E5%BD%92%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1 回归损失函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%88%86%E7%B1%BB%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2 分类损失函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-%E6%AD%A3%E5%88%99%E5%8C%96"><span class="toc-number">2.3.</span> <span class="toc-text">03 正则化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">2.4.</span> <span class="toc-text">04 归一化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-%E5%8F%82%E6%95%B0%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.5.</span> <span class="toc-text">05 参数初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#06-%E7%BD%91%E7%BB%9C%E9%A2%84%E8%AE%AD%E7%BB%83"><span class="toc-number">2.6.</span> <span class="toc-text">06 网络预训练</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数"/></a><div class="content"><a class="title" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数">线性代数</a><time datetime="2023-05-08T07:05:38.000Z" title="发表于 2023-05-08 15:05:38">2023-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AIMA笔记"/></a><div class="content"><a class="title" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记">AIMA笔记</a><time datetime="2023-03-23T09:51:42.000Z" title="发表于 2023-03-23 17:51:42">2023-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络笔记"/></a><div class="content"><a class="title" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记">神经网络笔记</a><time datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自然语言处理笔记"/></a><div class="content"><a class="title" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记">自然语言处理笔记</a><time datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多智能体笔记"/></a><div class="content"><a class="title" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记">多智能体笔记</a><time datetime="2023-03-15T08:05:41.000Z" title="发表于 2023-03-15 16:05:41">2023-03-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://seline02.github.io">Seline</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://seline02.github.io/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/">https://seline02.github.io/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://seline02.github.io" target="_blank">Seline's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">AIMA笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">自然语言处理笔记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%AE%B2-%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="toc-number">1.</span> <span class="toc-text">第二讲 神经元</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E7%A5%9E%E7%BB%8F%E5%85%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">01 神经元模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#02-%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E7%BB%84%E6%88%90%E6%88%90%E5%88%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">02 神经元的组成成分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03-%E6%84%9F%E7%9F%A5%E6%9C%BA%E7%A5%9E%E7%BB%8F%E5%85%83"><span class="toc-number">1.1.2.</span> <span class="toc-text">03 感知机神经元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04-%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">04 神经元的应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E8%AE%B2-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E4%BC%98%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">第五讲 神经网络模型优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#01-%E5%AD%A6%E4%B9%A0%E7%8E%87"><span class="toc-number">2.1.</span> <span class="toc-text">01 学习率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E4%BC%98%E5%8C%96%E5%99%A8"><span class="toc-number">2.1.1.</span> <span class="toc-text">深度学习中的优化器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">02 损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%9B%9E%E5%BD%92%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.1 回归损失函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%88%86%E7%B1%BB%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.2 分类损失函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-%E6%AD%A3%E5%88%99%E5%8C%96"><span class="toc-number">2.3.</span> <span class="toc-text">03 正则化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">2.4.</span> <span class="toc-text">04 归一化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-%E5%8F%82%E6%95%B0%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.5.</span> <span class="toc-text">05 参数初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#06-%E7%BD%91%E7%BB%9C%E9%A2%84%E8%AE%AD%E7%BB%83"><span class="toc-number">2.6.</span> <span class="toc-text">06 网络预训练</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数"/></a><div class="content"><a class="title" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数">线性代数</a><time datetime="2023-05-08T07:05:38.000Z" title="发表于 2023-05-08 15:05:38">2023-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AIMA笔记"/></a><div class="content"><a class="title" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记">AIMA笔记</a><time datetime="2023-03-23T09:51:42.000Z" title="发表于 2023-03-23 17:51:42">2023-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络笔记"/></a><div class="content"><a class="title" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记">神经网络笔记</a><time datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自然语言处理笔记"/></a><div class="content"><a class="title" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记">自然语言处理笔记</a><time datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多智能体笔记"/></a><div class="content"><a class="title" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记">多智能体笔记</a><time datetime="2023-03-15T08:05:41.000Z" title="发表于 2023-03-15 16:05:41">2023-03-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [ ['$','$'], ["\\(","\\)"]],

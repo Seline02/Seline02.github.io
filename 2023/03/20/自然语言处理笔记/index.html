@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>自然语言处理笔记 | Seline's blog</title><meta name="author" content="Seline"><meta name="copyright" content="Seline"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="编码器-解码器框架  编码整个源端句子的信息，容易成为信息承载的瓶颈 翻译过程不具有可解释性 目标端解码某个特定单词时，应该重点关注源端相关的单词  BERT Bidirectional Encoder Representation from Transformers 它强调了不再像以往一样采用传统的单向语言模型或者把两个单向语言模型进行浅层拼接的方法进行预训练，而是采用新的masked lang">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>自然语言处理笔记 | Seline's blog</title><meta name="author" content="Seline"><meta name="copyright" content="Seline"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="编码器-解码器框架   编码整个源端句子的信息，容易成为信息承载的瓶颈 翻译过程不具有可解释性 目标端解码某个特定单词时，应该重点关注源端相关的单词  BERT  Bidirectional Encoder Representation from Transformers 它强调了不再像以往一样采用传统的单向语言模型或者把两个单向语言模型进行浅层拼接的方法进行预训练，而是采用新的masked la">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自然语言处理笔记">
 <meta property="og:url" content="https://seline02.github.io/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Seline&#39;s blog">
-<meta property="og:description" content="编码器-解码器框架  编码整个源端句子的信息，容易成为信息承载的瓶颈 翻译过程不具有可解释性 目标端解码某个特定单词时，应该重点关注源端相关的单词  BERT Bidirectional Encoder Representation from Transformers 它强调了不再像以往一样采用传统的单向语言模型或者把两个单向语言模型进行浅层拼接的方法进行预训练，而是采用新的masked lang">
+<meta property="og:description" content="编码器-解码器框架   编码整个源端句子的信息，容易成为信息承载的瓶颈 翻译过程不具有可解释性 目标端解码某个特定单词时，应该重点关注源端相关的单词  BERT  Bidirectional Encoder Representation from Transformers 它强调了不再像以往一样采用传统的单向语言模型或者把两个单向语言模型进行浅层拼接的方法进行预训练，而是采用新的masked la">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
 <meta property="article:published_time" content="2023-03-20T08:31:21.000Z">
@@ -141,13 +141,15 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">自然语言处理笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-19T13:06:31.854Z" title="更新于 2023-06-19 21:06:31">2023-06-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="自然语言处理笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="编码器-解码器框架"><a href="#编码器-解码器框架" class="headerlink" title="编码器-解码器框架"></a>编码器-解码器框架</h3><p><img src="image-20230320172435905.png" alt="image-20230320172435905" style="zoom:50%;"></p>
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Seline's blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">自然语言处理笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-19T13:06:31.854Z" title="更新于 2023-06-19 21:06:31">2023-06-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="自然语言处理笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="编码器-解码器框架">编码器-解码器框架</h3>
+<img src="image-20230320172435905.png" alt="image-20230320172435905" style="zoom:50%;">
 <ul>
 <li>编码<strong>整个源端句子</strong>的信息，容易成为<strong>信息承载的瓶颈</strong></li>
 <li>翻译过程不具有可解释性</li>
 <li>目标端解码某个特定单词时，应该重点关注源端相关的单词</li>
 </ul>
-<h3 id="BERT"><a href="#BERT" class="headerlink" title="BERT"></a>BERT</h3><ul>
+<h3 id="bert">BERT</h3>
+<ul>
 <li>Bidirectional Encoder Representation from Transformers</li>
 <li>它强调了不再像以往一样采用传统的单向语言模型或者把两个单向语言模型进行浅层拼接的方法进行预训练，而是采用新的<strong>masked language model（MLM）</strong>，以致能生成<strong>深度的双向</strong>语言表征。</li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/98855346">https://zhuanlan.zhihu.com/p/98855346</a></li>
@@ -159,24 +161,31 @@
 <p>word2vec有两种训练方法：连续词袋模型（CBOW）和跳字模型（Skip-gram）。¹ CBOW通过给定上下文词来预测中心词，而Skip-gram通过给定中心词来预测上下文词。¹ 这两种方法都是<strong>基于局部窗口</strong>的，只考虑了<strong>词汇在语料中的相邻关系</strong>。¹</p>
 <p>GloVe则是通过构建一个<strong>全局的词-词共现矩阵</strong>，来度量<strong>任意两个词汇之间的相关性</strong>。² GloVe的目标函数是使得<strong>每对词汇的向量内积等于它们在共现矩阵中的对数值</strong>。² 这样，GloVe可以捕捉到词汇之间的<strong>线性关系</strong>，例如king - man + woman = queen。³</p>
 <p>word2vec和GloVe各有优缺点。word2vec可以更好地保留<strong>语义相似性</strong>，而GloVe可以更好地保留<strong>语义类比性</strong>。⁴ word2vec可以动态地更新词向量，而GloVe需要重新计算共现矩阵。⁵ word2vec可以处理低频词汇，而GloVe可能会忽略它们。⁵</p>
-<h1 id="一、自然语言处理简介"><a href="#一、自然语言处理简介" class="headerlink" title="一、自然语言处理简介"></a>一、自然语言处理简介</h1><ul>
+<h1 id="一-自然语言处理简介">一、自然语言处理简介</h1>
+<ul>
 <li>自然语言处理的概念、难点、应用、意义</li>
 <li>自然语言处理概念：利用计算机对自然语言进行各种加工处理、信息提取及应用的技术</li>
 </ul>
-<h1 id="二、基于规划的自然语言处理"><a href="#二、基于规划的自然语言处理" class="headerlink" title="二、基于规划的自然语言处理"></a>二、基于规划的自然语言处理</h1><ul>
-<li>中文分词：方法、歧义以及如何消歧<ul>
-<li>歧义<ul>
+<h1 id="二-基于规划的自然语言处理">二、基于规划的自然语言处理</h1>
+<ul>
+<li>中文分词：方法、歧义以及如何消歧
+<ul>
+<li>歧义
+<ul>
 <li><strong>交集型</strong>歧义：ABC划分成AB/C或A/BC</li>
 <li><strong>组合型</strong>歧义：AB切分成AB或A/B</li>
 <li><strong>混合型</strong>歧义：由交集型歧义和组合型歧义嵌套与交叉而成</li>
 </ul>
 </li>
-<li>伪歧义、真歧义<ul>
-<li>伪歧义字段指在<strong>任何情况</strong>下只有<strong>一种切分</strong><ul>
+<li>伪歧义、真歧义
+<ul>
+<li>伪歧义字段指在<strong>任何情况</strong>下只有<strong>一种切分</strong>
+<ul>
 <li>根据歧义字段本身就能消歧</li>
 </ul>
 </li>
-<li>真歧义字段指在<strong>不同的情况</strong>下有<strong>多种划分</strong><ul>
+<li>真歧义字段指在<strong>不同的情况</strong>下有<strong>多种划分</strong>
+<ul>
 <li>根据歧义字段的上下文来消歧</li>
 </ul>
 </li>
@@ -184,22 +193,27 @@
 </li>
 </ul>
 </li>
-<li>规划方法的优点与缺点<ul>
+<li>规划方法的优点与缺点
+<ul>
 <li>规则质量依赖于语言学家的知识和经验，获取成本高</li>
 <li>规则之间容易发生冲突</li>
 <li>大规模规则系统维护难度大</li>
 </ul>
 </li>
-<li>基于规则的歧义字段消歧方法<ul>
+<li>基于规则的歧义字段消歧方法
+<ul>
 <li>利用歧义字串、前驱字串和后继字串的句法、语义和语用信息</li>
 </ul>
 </li>
 </ul>
-<h1 id="三、语言模型与词向量"><a href="#三、语言模型与词向量" class="headerlink" title="三、语言模型与词向量"></a>三、语言模型与词向量</h1><ul>
-<li>统计语言模型的定义、参数估计、平滑以及公式推导等<ul>
+<h1 id="三-语言模型与词向量">三、语言模型与词向量</h1>
+<ul>
+<li>统计语言模型的定义、参数估计、平滑以及公式推导等
+<ul>
 <li>语言模型是衡量一句话出现在自然语言中的概率的模型</li>
 <li>语言模型的<strong>核心</strong>在于根据前文预测下一个词出现的概率</li>
-<li>Zipf Law<ul>
+<li>Zipf Law
+<ul>
 <li>如果以词频排序，词频和排位成反比（乘积接近一个常数）</li>
 <li>隐藏信息、数据稀疏问题（对于未出现在语料中的词或n-gram，无法估计其概率）</li>
 </ul>
@@ -208,27 +222,32 @@
 </li>
 <li>离散词表示 vs 连续词表示</li>
 <li>分布式词表示的核心思想：一个词的含义能被这个词所在的上下文反映</li>
-<li>CBOW和skip-gram的异同<ul>
-<li>连续词典模型（CBOW）：利用单词 $c$ 的上下文 $o$ 预测单词 $c$</li>
-<li>skip-gram：利用单词 $c$ 预测单词 $c$ 的上下文 $o$</li>
+<li>CBOW和skip-gram的异同
+<ul>
+<li>连续词典模型（CBOW）：利用单词 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 的上下文 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi></mrow><annotation encoding="application/x-tex">o</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">o</span></span></span></span> 预测单词 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span></li>
+<li>skip-gram：利用单词 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 预测单词 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 的上下文 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi></mrow><annotation encoding="application/x-tex">o</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">o</span></span></span></span></li>
 <li>都是<strong>基于局部窗口</strong>的，只考虑了<strong>词汇在语料中的相邻关系</strong>。</li>
 <li>优点：能捕获语法和语义信息；缺点：速度和数据规模相关、未能有效利用统计数据，不能很好地学到全局的信息</li>
 </ul>
 </li>
 <li>word2vec如何加速训练：负采样</li>
-<li>GloVe的核心思想：<ul>
-<li>共现概率矩阵 $X_{ij}$</li>
-<li>单词 $w_i,w_j$ 的词向量 $v_i,v_j$</li>
+<li>GloVe的核心思想：
+<ul>
+<li>共现概率矩阵 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>X</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">X_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></li>
+<li>单词 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>w</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">w_i,w_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 的词向量 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>v</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">v_i,v_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></li>
 <li>以学习的方式，用词向量之间的语义关系来拟合共现概率矩阵</li>
 <li>优点：训练快；适应于大规模数据；在小规模数据上性能优秀</li>
 </ul>
 </li>
 </ul>
-<h1 id="四、神经网络和语言模型"><a href="#四、神经网络和语言模型" class="headerlink" title="四、神经网络和语言模型"></a>四、神经网络和语言模型</h1><ul>
-<li>深层网络的问题以及如何理解<ul>
+<h1 id="四-神经网络和语言模型">四、神经网络和语言模型</h1>
+<ul>
+<li>深层网络的问题以及如何理解
+<ul>
 <li>RNN 梯度爆炸、梯度消失</li>
 <li>长短期记忆网络，线性变换，缓解远程梯度爆炸和梯度消失问题</li>
-<li>深层网络更容易产生梯度问题（梯度连乘后容易接近0（消失）或者爆炸）<ul>
+<li>深层网络更容易产生梯度问题（梯度连乘后容易接近0（消失）或者爆炸）
+<ul>
 <li>梯度消失常用解决方案：ReLU、残差连接</li>
 <li>梯度爆炸常用解决方案：梯度裁剪（Clipping）</li>
 </ul>
@@ -237,9 +256,12 @@
 </li>
 <li>Teacher forcing是一种在训练神经网络时使用的技术。在这种技术中，每次训练时，不使用上一个state的输出作为下一个state的输入，而是直接使用<strong>训练数据的标准答案</strong>的对应上一项作为下一个state的输入。这种技术能够在训练的时候<strong>矫正模型的预测</strong>，避免在序列生成的过程中<strong>误差进一步放大</strong>。</li>
 </ul>
-<h1 id="五、高级神经网络和预训练模型"><a href="#五、高级神经网络和预训练模型" class="headerlink" title="五、高级神经网络和预训练模型"></a>五、高级神经网络和预训练模型</h1><ul>
-<li>注意力机制的设计目的与应用领域<ul>
-<li>注意力机制：目标端解码时，直接从源端句子捕获对当前解码有帮助的信息，从而生成更相关、更准确的解码结果<ul>
+<h1 id="五-高级神经网络和预训练模型">五、高级神经网络和预训练模型</h1>
+<ul>
+<li>注意力机制的设计目的与应用领域
+<ul>
+<li>注意力机制：目标端解码时，直接从源端句子捕获对当前解码有帮助的信息，从而生成更相关、更准确的解码结果
+<ul>
 <li>优点：缓解RNN的信息瓶颈问题；缓解长距离依赖问题；具有一定的可解释性</li>
 </ul>
 </li>
@@ -247,64 +269,79 @@
 <li>基于注意力机制的文本分类模型</li>
 </ul>
 </li>
-<li>循环神经网络的问题<ul>
-<li>有限的信息交互距离<ul>
+<li>循环神经网络的问题
+<ul>
+<li>有限的信息交互距离
+<ul>
 <li>RNN能捕捉局部信息，但无法很好地解决<strong>长距离依赖关系</strong></li>
 <li>不能很好地建模序列中的<strong>非线性结构关系</strong></li>
 </ul>
 </li>
-<li>无法并行<ul>
+<li>无法并行
+<ul>
 <li>RNN 的隐层状态具有<strong>序列依赖性</strong></li>
 <li>时间消耗随序列长度的增加而增加</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Transformer的组件、设计原理，尤其是position embedding<ul>
-<li>Transformer<ul>
+<li>Transformer的组件、设计原理，尤其是position embedding
+<ul>
+<li>Transformer
+<ul>
 <li>完全基于attention机制构建的神经网络模型</li>
 <li>直接建模输入序列的<strong>全局依赖关系</strong></li>
 <li>并行计算</li>
 </ul>
 </li>
-<li>编码器<ul>
-<li>位置编码<ul>
+<li>编码器
+<ul>
+<li>位置编码
+<ul>
 <li>为什么：注意力计算是加权和；无法考虑相对位置关系</li>
 <li><strong>三角函数表示</strong>：直接根据正余弦函数计算位置编码（不需要从头学习，直接计算得出）</li>
-<li><strong>从头学习</strong>：随机初始化位置编码 $p_i$，并跟随网络一起训练（能更好地拟合数据）</li>
+<li><strong>从头学习</strong>：随机初始化位置编码 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">p_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，并跟随网络一起训练（能更好地拟合数据）</li>
 </ul>
 </li>
-<li>多头自注意力机制<ul>
+<li>多头自注意力机制
+<ul>
 <li>并行地计算多个自注意力过程，并拼接输出结果</li>
 </ul>
 </li>
-<li>残差连接<ul>
+<li>残差连接
+<ul>
 <li>将浅层网络和深层网络相连，有利于梯度回传</li>
 <li>使深处网络的训练变得更加容易</li>
 </ul>
 </li>
-<li>层正则（Layer Normalization）<ul>
+<li>层正则（Layer Normalization）
+<ul>
 <li>对输入进行标准化</li>
 <li>加速收敛，提升模型训练的稳定性</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>解码器<ul>
+<li>解码器
+<ul>
 <li>Cross Attention：解码时需要关注源端信息</li>
 <li>Masked Attention：解码时（训练）不应该看到未来的信息</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>序列到序列问题实际建模<ul>
-<li>BERT<ul>
-<li>Masked Language Model（MLM）<ul>
+<li>序列到序列问题实际建模
+<ul>
+<li>BERT
+<ul>
+<li>Masked Language Model（MLM）
+<ul>
 <li>随机选择一部分词并mask掉，要求预测出mask掉的词</li>
 <li>同时建模双向信息但不会泄露目标词的信息</li>
 </ul>
 </li>
-<li>Next Sentence Prediction（NSP）<ul>
+<li>Next Sentence Prediction（NSP）
+<ul>
 <li>对于文本中连续的两个句子，以一定的概率替换掉其中某个句子</li>
 <li>预测两个句子是否是连续的</li>
 <li>为了使得模型能理解句子之间的关系</li>
@@ -315,43 +352,56 @@
 </ul>
 </li>
 </ul>
-<h1 id="六、文本分类"><a href="#六、文本分类" class="headerlink" title="六、文本分类"></a>六、文本分类</h1><ul>
-<li>朴素贝叶斯概念及计算<ul>
-<li>一个概率模型，生成式模型<ul>
-<li>$\arg\max_yP(y|x)=\arg\max_yP(x,y)=\arg\max_yP(x|y)P(y)$   建模<strong>联合概率</strong>，<strong>生成式模型</strong></li>
+<h1 id="六-文本分类">六、文本分类</h1>
+<ul>
+<li>
+<p>朴素贝叶斯概念及计算</p>
+<ul>
+<li>一个概率模型，生成式模型
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>arg</mi><mo>⁡</mo><msub><mo><mi>max</mi><mo>⁡</mo></mo><mi>y</mi></msub><mi>P</mi><mo stretchy="false">(</mo><mi>y</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>arg</mi><mo>⁡</mo><msub><mo><mi>max</mi><mo>⁡</mo></mo><mi>y</mi></msub><mi>P</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>arg</mi><mo>⁡</mo><msub><mo><mi>max</mi><mo>⁡</mo></mo><mi>y</mi></msub><mi>P</mi><mo stretchy="false">(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo stretchy="false">)</mo><mi>P</mi><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\arg\max_yP(y|x)=\arg\max_yP(x,y)=\arg\max_yP(x|y)P(y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mop">ar<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">max</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">∣</span><span class="mord mathdefault">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mop">ar<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">max</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mop">ar<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop">max</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>   建模<strong>联合概率</strong>，<strong>生成式模型</strong></li>
 </ul>
 </li>
 <li>朴素假设：特征之间相互独立，即任意两个词出现的概率互不影响</li>
-<li>计算<ul>
+<li>计算
+<ul>
 <li>伯努利文档模型：表示文本时只考虑单词是否出现，不考虑出现次数</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>逻辑斯蒂回归、softmax回归等概念与相关计算<ul>
-<li>逻辑斯蒂回归<ul>
+<li>
+<p>逻辑斯蒂回归、softmax回归等概念与相关计算</p>
+<ul>
+<li>逻辑斯蒂回归
+<ul>
 <li>逻辑斯蒂是一种二分类模型（线性分类模型）</li>
 <li>用一个非线性激活函数（Sigmoid函数）来模拟后验概率</li>
 </ul>
 </li>
-<li>softmax回归<ul>
+<li>softmax回归
+<ul>
 <li>softmax回归是一种多分类模型，也叫做<strong>多分类逻辑回归</strong></li>
 <li>在NLP中，也被称作最大熵模型</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>卷积神经网络</p>
+<li>
+<p>卷积神经网络</p>
 <ul>
-<li>为什么做卷积<ul>
+<li>为什么做卷积
+<ul>
 <li>在图像中，用于获取平移不变性的特征</li>
 <li>用相同的卷积核对不同的位置进行卷积</li>
 </ul>
 </li>
-<li>为什么做池化 pooling<ul>
+<li>为什么做池化 pooling
+<ul>
 <li>为什么能做：池化不会改变目标对象的<strong>整体信息</strong></li>
 <li>为什么要做：使目标对象更小，节省网络参数</li>
-<li>即在减少数据量的同时保留有用信息<ul>
+<li>即在减少数据量的同时保留有用信息
+<ul>
 <li>max pooling 最大池化：抽取代表性特征信息</li>
 <li>average pooling 平均池化：全面考虑特征信息</li>
 </ul>
@@ -360,14 +410,23 @@
 </li>
 </ul>
 </li>
-<li><p>使用预训练词向量并微调词向量：微调能使得词向量学习到任务相关的语义信息</p>
+<li>
+<p>使用预训练词向量并微调词向量：微调能使得词向量学习到任务相关的语义信息</p>
 </li>
 </ul>
-<h1 id="七、序列化标注"><a href="#七、序列化标注" class="headerlink" title="七、序列化标注"></a>七、序列化标注</h1><ul>
-<li>序列化标注：给定一个观测序列作为输入，输出是一个标记序列或状态序列</li>
-<li>马尔科夫链：描述在状态空间中，从一个状态到另一个状态转换的随机过程</li>
-<li>马尔科夫假设：马尔科夫链在任意时刻 $t$ 的状态只依赖于它在前一时刻的状态，与其他时刻的状态无关</li>
-<li><p>隐马尔可夫模型 HMM</p>
+<h1 id="七-序列化标注">七、序列化标注</h1>
+<ul>
+<li>
+<p>序列化标注：给定一个观测序列作为输入，输出是一个标记序列或状态序列</p>
+</li>
+<li>
+<p>马尔科夫链：描述在状态空间中，从一个状态到另一个状态转换的随机过程</p>
+</li>
+<li>
+<p>马尔科夫假设：马尔科夫链在任意时刻 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span> 的状态只依赖于它在前一时刻的状态，与其他时刻的状态无关</p>
+</li>
+<li>
+<p>隐马尔可夫模型 HMM</p>
 <ul>
 <li>是一阶马尔科夫链的拓展</li>
 <li>状态序列不可见</li>
@@ -375,17 +434,20 @@
 <li>可见的观察值与隐藏的状态之间存在概率关系</li>
 </ul>
 </li>
-<li><p>HMM 方法的问题</p>
+<li>
+<p>HMM 方法的问题</p>
 <ul>
 <li>只考虑当前时刻的特征，无法融入更多的特征（如上下文）以表示复杂的关系</li>
 <li>转移概率做了<strong>局部归一化</strong>，容易产生<strong>标签偏置</strong>问题</li>
 </ul>
 </li>
-<li><p>CRF</p>
+<li>
+<p>CRF</p>
 <ul>
 <li>判别式模型，直接建模后验概率，类似于LR</li>
 <li>通常用线性链CRF建模序列化标注任务</li>
-<li>模型可以融合各种手工设计的特征<ul>
+<li>模型可以融合各种手工设计的特征
+<ul>
 <li>可以引入领域知识</li>
 <li>可解释性强</li>
 <li>可以快速地训练和解码</li>
@@ -395,46 +457,55 @@
 </li>
 </ul>
 </li>
-</ul>
-<ul>
-<li><p>词性标注：BILSTM</p>
+<li>
+<p>词性标注：BILSTM</p>
 <ul>
 <li>利用双向LSTM建模上下文信息，将上下文信息同时融入序列化标注</li>
-<li>问题<ul>
+<li>问题
+<ul>
 <li>输出的词性标签之间<strong>相互独立</strong>，只依赖于当前时刻的特征表示</li>
 <li>实际上，词性标签之间存在序列相关性。例如，动词后经常会接名词</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>BILSTM-CRF</p>
+<li>
+<p>BILSTM-CRF</p>
 <ul>
 <li>在BiLSTM的基础上添加CRF，建模<strong>序列依赖性</strong></li>
 <li>LSTM-CRF通过<strong>跳转矩阵P</strong>建模词性标签之间的依赖关系</li>
 </ul>
 </li>
-<li>LSTM-CNN-CRF<ul>
+<li>
+<p>LSTM-CNN-CRF</p>
+<ul>
 <li>利用CNN来建模<strong>单词内的字符串信息</strong></li>
 <li>一些特定的字符串（如英语中各种与词性相关的前缀、后缀）对词性标注是有帮助的</li>
 </ul>
 </li>
 </ul>
-<h1 id="八、句法分析"><a href="#八、句法分析" class="headerlink" title="八、句法分析"></a>八、句法分析</h1><ul>
-<li>句法分析<ul>
-<li>成分句法分析：研究词如何构成短语、短语如何构成句子<ul>
-<li>上下文无关文法（Context-free Grammar，CFG）<ul>
+<h1 id="八-句法分析">八、句法分析</h1>
+<ul>
+<li>句法分析
+<ul>
+<li>成分句法分析：研究词如何构成短语、短语如何构成句子
+<ul>
+<li>上下文无关文法（Context-free Grammar，CFG）
+<ul>
 <li>CFG定义语言中的<strong>有效结构</strong>，它通过形式化方法定义句子中<strong>有意义的成分</strong>，以及一个成分是如何由其他成分（单词或短语）构成的</li>
 </ul>
 </li>
-<li>自顶向下的句法分析 问题<ul>
+<li>自顶向下的句法分析 问题
+<ul>
 <li>需要搜索的树数量达到<strong>指数级别</strong></li>
 <li>许多子树是相同的，存在<strong>重复解析</strong></li>
 </ul>
 </li>
-<li>CKY算法（自底向上的动态规划算法）<ul>
+<li>CKY算法（自底向上的动态规划算法）
+<ul>
 <li>对已分析的子树进行存储（记忆化），避免重复解析</li>
 <li>动态规划，将分析中间结果存放在表中，减少重复计算</li>
-<li>复杂度 $O(n^3|G|)$，$n$ 是句子长度，$|G|$ 是文法中规则的数量</li>
+<li>复杂度 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><mi mathvariant="normal">∣</mi><mi>G</mi><mi mathvariant="normal">∣</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^3|G|)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mord">∣</span><span class="mord mathdefault">G</span><span class="mord">∣</span><span class="mclose">)</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 是句子长度，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>G</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|G|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault">G</span><span class="mord">∣</span></span></span></span> 是文法中规则的数量</li>
 <li>算法前提：上下文无关文法CFG转换为乔姆斯基范式CNF</li>
 <li>问题：歧义</li>
 </ul>
@@ -447,21 +518,27 @@
 <li>PCFG计算</li>
 <li>CKY计算</li>
 </ul>
-<h1 id="九、序列生成-机器翻译"><a href="#九、序列生成-机器翻译" class="headerlink" title="九、序列生成-机器翻译"></a>九、序列生成-机器翻译</h1><ul>
-<li>机器翻译的思想、深度学习建模<ul>
-<li>翻译步骤<ul>
+<h1 id="九-序列生成-机器翻译">九、序列生成-机器翻译</h1>
+<ul>
+<li>机器翻译的思想、深度学习建模
+<ul>
+<li>翻译步骤
+<ul>
 <li>分析：将源语言句子解析成一种深层的结构表示</li>
 <li>转换：将源语言句子的深层结构表示转换成目标语言的深层结构表示</li>
 <li>生成：根据目标语言的深层结构表示生成对应的目标语言句子</li>
 </ul>
 </li>
-<li>基于实例的机器翻译<ul>
-<li>从双语语料库中学习翻译实例<ul>
+<li>基于实例的机器翻译
+<ul>
+<li>从双语语料库中学习翻译实例
+<ul>
 <li>利用<strong>类比思想</strong>，避免复杂的结构分析</li>
 <li>从<strong>语料库</strong>中查找与待翻译句子<strong>相近的实例</strong>，通过<strong>逐词替换</strong>进行翻译</li>
 </ul>
 </li>
-<li>问题<ul>
+<li>问题
+<ul>
 <li>检索的实例粒度一般为<strong>句子</strong>，无法支持<strong>较长文本</strong>的翻译</li>
 <li><strong>实例相似度较低</strong>时翻译欠佳</li>
 </ul>
@@ -470,14 +547,18 @@
 </li>
 </ul>
 </li>
-<li>贪心解码与柱搜索<ul>
-<li>贪心解码：解码时，每个时刻从解码器<strong>取出概率最大的词</strong>作为预测结果<ul>
+<li>贪心解码与柱搜索
+<ul>
+<li>贪心解码：解码时，每个时刻从解码器<strong>取出概率最大的词</strong>作为预测结果
+<ul>
 <li>问题：某一时刻的错误翻译会影响后续所有翻译，因此不一定能解码出全局最佳（译文概率最大）的译文</li>
 </ul>
 </li>
-<li>枚举解码：解码时枚举所有的翻译结果 $y$。极其耗时</li>
-<li>柱搜索解码：在贪心搜索基础上扩大搜索空间，从而更有可能解码出全局最优的译文<ul>
-<li>核心思想：在 $t$ 时刻，保留 $k$ 个概率最大的翻译结果<ul>
+<li>枚举解码：解码时枚举所有的翻译结果 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>。极其耗时</li>
+<li>柱搜索解码：在贪心搜索基础上扩大搜索空间，从而更有可能解码出全局最优的译文
+<ul>
+<li>核心思想：在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span></span></span></span> 时刻，保留 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 个概率最大的翻译结果
+<ul>
 <li>相比于枚举，极大提高搜索效率</li>
 <li>并不能保证一定解码出最优的译文</li>
 </ul>
@@ -486,37 +567,44 @@
 </li>
 </ul>
 </li>
-<li>BLEU的定义、计算、存在的问题<ul>
-<li>定义<ul>
+<li>BLEU的定义、计算、存在的问题
+<ul>
+<li>定义
+<ul>
 <li>一种衡量机器翻译质量的自动评估指标</li>
-<li><strong>统计机器翻译译文</strong>与<strong>参考译文</strong>中 $n$ 元文法匹配的数目占<strong>系统译文中所有</strong> $n$ 元文法总数的比例，即 $n$ 元文法的精确率</li>
+<li><strong>统计机器翻译译文</strong>与<strong>参考译文</strong>中 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 元文法匹配的数目占<strong>系统译文中所有</strong> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 元文法总数的比例，即 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 元文法的精确率</li>
 </ul>
 </li>
-<li>存在的问题<ul>
-<li>精确率 $p_n$ 的计算公式中分母为机器翻译译文，<strong>译文越短</strong>，$p_n$ 的值倾向更大</li>
+<li>存在的问题
+<ul>
+<li>精确率 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">p_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的计算公式中分母为机器翻译译文，<strong>译文越短</strong>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">p_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的值倾向更大</li>
 <li>具有偏向性，对于<strong>漏翻的词不敏感</strong></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h1 id="十、自然语言处理范式演进"><a href="#十、自然语言处理范式演进" class="headerlink" title="十、自然语言处理范式演进"></a>十、自然语言处理范式演进</h1><ul>
-<li>Prompt 的核心思想、为什么能 work<ul>
+<h1 id="十-自然语言处理范式演进">十、自然语言处理范式演进</h1>
+<ul>
+<li>Prompt 的核心思想、为什么能 work
+<ul>
 <li>训练好大模型后，怎么激发模型的能力</li>
 <li>为什么会 work</li>
 </ul>
 </li>
-<li>Prompt 设计题<ul>
+<li>Prompt 设计题
+<ul>
 <li>可以设计我们自己的一个体现模板</li>
 </ul>
 </li>
-<li>Prompt Learning 和 Instruction Learning 的区别与联系<ul>
+<li>Prompt Learning 和 Instruction Learning 的区别与联系
+<ul>
 <li>prompt工程：设计合适的prompt（提示文本），将下游任务转换为对应的语言模型任务</li>
 <li></li>
 </ul>
 </li>
 </ul>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://seline02.github.io">Seline</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://seline02.github.io/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/">https://seline02.github.io/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://seline02.github.io" target="_blank">Seline's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">神经网络笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">多智能体笔记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E5%99%A8-%E8%A7%A3%E7%A0%81%E5%99%A8%E6%A1%86%E6%9E%B6"><span class="toc-number">1.</span> <span class="toc-text">编码器-解码器框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BERT"><span class="toc-number">2.</span> <span class="toc-text">BERT</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AE%80%E4%BB%8B"><span class="toc-number"></span> <span class="toc-text">一、自然语言处理简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9F%BA%E4%BA%8E%E8%A7%84%E5%88%92%E7%9A%84%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86"><span class="toc-number"></span> <span class="toc-text">二、基于规划的自然语言处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E5%90%91%E9%87%8F"><span class="toc-number"></span> <span class="toc-text">三、语言模型与词向量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%92%8C%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">四、神经网络和语言模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%AB%98%E7%BA%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%92%8C%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">五、高级神经网络和预训练模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="toc-number"></span> <span class="toc-text">六、文本分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%BA%8F%E5%88%97%E5%8C%96%E6%A0%87%E6%B3%A8"><span class="toc-number"></span> <span class="toc-text">七、序列化标注</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%8F%A5%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number"></span> <span class="toc-text">八、句法分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E5%BA%8F%E5%88%97%E7%94%9F%E6%88%90-%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91"><span class="toc-number"></span> <span class="toc-text">九、序列生成-机器翻译</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E8%8C%83%E5%BC%8F%E6%BC%94%E8%BF%9B"><span class="toc-number"></span> <span class="toc-text">十、自然语言处理范式演进</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数"/></a><div class="content"><a class="title" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数">线性代数</a><time datetime="2023-05-08T07:05:38.000Z" title="发表于 2023-05-08 15:05:38">2023-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AIMA笔记"/></a><div class="content"><a class="title" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记">AIMA笔记</a><time datetime="2023-03-23T09:51:42.000Z" title="发表于 2023-03-23 17:51:42">2023-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络笔记"/></a><div class="content"><a class="title" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记">神经网络笔记</a><time datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自然语言处理笔记"/></a><div class="content"><a class="title" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记">自然语言处理笔记</a><time datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多智能体笔记"/></a><div class="content"><a class="title" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记">多智能体笔记</a><time datetime="2023-03-15T08:05:41.000Z" title="发表于 2023-03-15 16:05:41">2023-03-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://seline02.github.io">Seline</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://seline02.github.io/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/">https://seline02.github.io/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://seline02.github.io" target="_blank">Seline's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">神经网络笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">多智能体笔记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Seline</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E5%99%A8-%E8%A7%A3%E7%A0%81%E5%99%A8%E6%A1%86%E6%9E%B6"><span class="toc-number">1.</span> <span class="toc-text">编码器-解码器框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bert"><span class="toc-number">2.</span> <span class="toc-text">BERT</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AE%80%E4%BB%8B"><span class="toc-number"></span> <span class="toc-text">一、自然语言处理简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%9F%BA%E4%BA%8E%E8%A7%84%E5%88%92%E7%9A%84%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86"><span class="toc-number"></span> <span class="toc-text">二、基于规划的自然语言处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E4%B8%8E%E8%AF%8D%E5%90%91%E9%87%8F"><span class="toc-number"></span> <span class="toc-text">三、语言模型与词向量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%92%8C%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">四、神经网络和语言模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E9%AB%98%E7%BA%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%92%8C%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B"><span class="toc-number"></span> <span class="toc-text">五、高级神经网络和预训练模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD-%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="toc-number"></span> <span class="toc-text">六、文本分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83-%E5%BA%8F%E5%88%97%E5%8C%96%E6%A0%87%E6%B3%A8"><span class="toc-number"></span> <span class="toc-text">七、序列化标注</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB-%E5%8F%A5%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number"></span> <span class="toc-text">八、句法分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D-%E5%BA%8F%E5%88%97%E7%94%9F%E6%88%90-%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91"><span class="toc-number"></span> <span class="toc-text">九、序列生成-机器翻译</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81-%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E8%8C%83%E5%BC%8F%E6%BC%94%E8%BF%9B"><span class="toc-number"></span> <span class="toc-text">十、自然语言处理范式演进</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数"/></a><div class="content"><a class="title" href="/2023/05/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" title="线性代数">线性代数</a><time datetime="2023-05-08T07:05:38.000Z" title="发表于 2023-05-08 15:05:38">2023-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AIMA笔记"/></a><div class="content"><a class="title" href="/2023/03/23/AIMA%E7%AC%94%E8%AE%B0/" title="AIMA笔记">AIMA笔记</a><time datetime="2023-03-23T09:51:42.000Z" title="发表于 2023-03-23 17:51:42">2023-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="神经网络笔记"/></a><div class="content"><a class="title" href="/2023/03/21/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="神经网络笔记">神经网络笔记</a><time datetime="2023-03-21T04:32:51.000Z" title="发表于 2023-03-21 12:32:51">2023-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自然语言处理笔记"/></a><div class="content"><a class="title" href="/2023/03/20/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%AC%94%E8%AE%B0/" title="自然语言处理笔记">自然语言处理笔记</a><time datetime="2023-03-20T08:31:21.000Z" title="发表于 2023-03-20 16:31:21">2023-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多智能体笔记"/></a><div class="content"><a class="title" href="/2023/03/15/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E7%AC%94%E8%AE%B0/" title="多智能体笔记">多智能体笔记</a><time datetime="2023-03-15T08:05:41.000Z" title="发表于 2023-03-15 16:05:41">2023-03-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Seline</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [ ['$','$'], ["\\(","\\)"]],
