@@ -1325,7 +1325,7 @@ canvas:not(#ribbon-canvas),
   }
 }
 :root {
-  --global-font-size: 14px;
+  --global-font-size: 16px;
   --global-bg: #fff;
   --font-color: #4c4948;
   --hr-border: #a4d8fa;
@@ -3850,6 +3850,15 @@ h1.page-title + .tag-cloud-list {
 }
 #post .ads-wrap {
   margin: 40px 0;
+}
+.post-content h1 {
+  font-size: 2.5em !important;
+}
+.post-content h2 {
+  font-size: 2em !important;
+}
+.post-content h3 {
+  font-size: 1.5em !important;
 }
 .relatedPosts {
   margin-top: 40px;
