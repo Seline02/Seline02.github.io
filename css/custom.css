@@ -5,6 +5,58 @@
     letter-spacing: 0.5px;
 }
 
+/* 一级目录 */
+.toc-item.toc-level-1 > .toc-link {
+  font-size: 14px !important;
+}
+
+/* 二级目录 */
+.toc-item.toc-level-2 > .toc-link {
+  font-size: 12px !important;
+}
+
+/* 三级目录 */
+.toc-item.toc-level-3 > .toc-link {
+  font-size: 11px !important;
+}
+
+/* 四级目录 */
+.toc-item.toc-level-4 > .toc-link {
+  font-size: 10px !important;
+}
+
+/* 五级目录 */
+.toc-item.toc-level-5 > .toc-link {
+  font-size: 9px !important;
+}
+
+/* 隐藏四级及更深层级的序号 */
+.toc-item.toc-level-4 .toc-number,
+.toc-item.toc-level-5 .toc-number,
+.toc-item.toc-level-6 .toc-number {
+  display: none;
+}
+
+/* 二级目录缩进 */
+.toc-item.toc-level-1 > .toc-child {
+  padding-left: 10px !important;
+}
+
+/* 三级目录缩进 */
+.toc-item.toc-level-2 > .toc-child {
+  padding-left: 10px !important;
+}
+
+/* 四级及更深 */
+.toc-item.toc-level-3 > .toc-child,
+.toc-item.toc-level-4 > .toc-child {
+  padding-left: 10px !important;
+}
+
+figure.highlight {
+  font-size: 13px !important;
+}
+
 /* 优化标题样式 */
 /* .post-content h1 {
     font-size: 2.2em;
